@@ -17,19 +17,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: "yarn"
+          cache: "npm"
 
-      - name: Enable Corepack and Install Yarn 4.5.1
-        run: |
-          corepack enable
-          corepack prepare yarn@4.5.1 --activate
-          yarn --version  # Verify Yarn version
-
-      - name: Install dependencies with Yarn
-        run: yarn install
+      - name: Install dependencies with NPM
+        run: npm install
 
       - name: Build the project
-        run: yarn build
+        run: npm run build
 
       - name: Deploy to GitHub Pages on gh-pages branch
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
