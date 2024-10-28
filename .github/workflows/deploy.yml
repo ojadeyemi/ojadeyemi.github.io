@@ -8,7 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
@@ -17,13 +16,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: "npm"
 
-      - name: Install dependencies with NPM
-        run: npm install
+      - name: Install dependencies with Yarn
+        run: yarn install
 
       - name: Build the project
-        run: npm run build
+        run: yarn build
 
       - name: Deploy to GitHub Pages on gh-pages branch
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

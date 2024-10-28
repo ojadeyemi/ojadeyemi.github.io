@@ -12,6 +12,7 @@ dist
 dist-ssr
 .yarn/install-state.gz
 *.local
+tsconfig.tsbuildinfo
 
 # Editor directories and files
 .vscode/*
