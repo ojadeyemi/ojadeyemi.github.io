@@ -1,8 +1,8 @@
 import "./globals.css"; // Import your global styles
-import { ThemeProvider } from "@/contexts/ThemeContext";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import Home from "@/pages/Home";
 import Navbar from "./components/navbar";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import Home from "@/pages/Home";
 
 const App = () => {
   return (

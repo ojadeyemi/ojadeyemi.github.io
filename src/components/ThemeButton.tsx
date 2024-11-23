@@ -1,6 +1,7 @@
-import React from "react";
-import { useTheme } from "../contexts/ThemeContext";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import React from "react";
+
+import { useTheme } from "../contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
 
 const ThemeButton = React.forwardRef<HTMLButtonElement>((props, ref) => {

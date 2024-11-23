@@ -1,3 +1,5 @@
+import Markdown from "react-markdown";
+
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -8,7 +10,6 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-import Markdown from "react-markdown";
 interface ProjectLink {
   icon: React.ReactNode;
   type: string;

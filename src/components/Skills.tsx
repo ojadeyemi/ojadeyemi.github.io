@@ -1,8 +1,7 @@
-import BlurFade from "./ui/blur-fade";
-
-import { DATA } from "@/data/resume";
-import { BLUR_FADE_DELAY } from "@/constants/constant";
 import { Badge } from "./ui/badge";
+import BlurFade from "./ui/blur-fade";
+import { BLUR_FADE_DELAY } from "@/constants/constant";
+import { DATA } from "@/data/resume";
 
 const Skills = () => {
   return (

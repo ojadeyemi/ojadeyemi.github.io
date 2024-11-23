@@ -1,7 +1,7 @@
-import BlurFade from "./ui/blur-fade";
 import { ResumeCard } from "./resume-card";
-import { DATA } from "@/data/resume";
+import BlurFade from "./ui/blur-fade";
 import { BLUR_FADE_DELAY } from "@/constants/constant";
+import { DATA } from "@/data/resume";
 
 const Work: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 // src/components/Projects.tsx
-import React from "react";
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
+import React from "react";
 
 const Projects: React.FC = () => {
   return (

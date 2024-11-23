@@ -1,10 +1,11 @@
+import { motion } from "framer-motion";
+import { ChevronRightIcon } from "lucide-react";
+import React from "react";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import { ChevronRightIcon } from "lucide-react";
-import React from "react";
 
 interface ResumeCardProps {
   logoUrl: string;

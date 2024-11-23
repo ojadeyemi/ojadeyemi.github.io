@@ -1,6 +1,5 @@
-import { Dock, DockIcon } from "@/components/ui/dock";
-
 import { buttonVariants } from "@/components/ui/button";
+import { Dock, DockIcon } from "@/components/ui/dock";
 import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
