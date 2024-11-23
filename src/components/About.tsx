@@ -12,8 +12,8 @@ const About = () => {
           <div className="flex flex-col gap-y-2">
             <p className="text-sm text-muted-foreground">
               Hello! I&#39;m currently a computer science student located in
-              Toronto. I&#39;m currently working at MLSE as a Data Engineer,
-              where I&#39;ve been able to build &nbsp;
+              Toronto. I&#39;m currently working at MLSE as an Engineer, where
+              I&#39;ve been able to build &nbsp;
               <a
                 href="https://aws.amazon.com/blogs/media/maple-leaf-sports-entertainment-debuts-generative-ai-video-editor-to-deliver-content-to-fans-faster/"
                 className="inline underline transition duration-150 ease-in-out hover:text-purple-300 active:text-purple-600"

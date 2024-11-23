@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 
 export const DATA = {
   name: "OJ Adeyemi",
@@ -10,25 +10,23 @@ export const DATA = {
   description:
     "Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.",
   summary:
-    "Hello! I'm currently a computer science student located in Toronto. I'm currently working at MLSE as a Data Engineer, where I've been able to build  [Gen AI applications](https://aws.amazon.com/blogs/media/maple-leaf-sports-entertainment-debuts-generative-ai-video-editor-to-deliver-content-to-fans-faster/) for the Toronto Raptors, Maple Leafs, TFC, Argos and associated fans.",
+    "Hello! I'm currently a computer science student located in Toronto. I'm currently working at MLSE as an Engineer, where I've been able to build  [Gen AI applications](https://aws.amazon.com/blogs/media/maple-leaf-sports-entertainment-debuts-generative-ai-video-editor-to-deliver-content-to-fans-faster/) for the Toronto Raptors, Maple Leafs, TFC, Argos and associated fans.",
   avatarUrl: "/me.png",
   skills: [
-    "React",
-    "Next.js",
-    "Typescript",
-    "Node.js",
     "Python",
-    "Go",
-    "Postgres",
+    "Java",
+    "HTML5",
+    "CSS",
+    "Javascript",
+    "Typescript",
+    "React",
+    "Node.js",
+    "SQL",
     "Docker",
     "Kubernetes",
-    "Java",
-    "C++",
+    "AWS",
   ],
-  navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
-  ],
+  navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
   contact: {
     email: "ojieadeyemi@gmail.com",
     social: {
@@ -70,18 +68,28 @@ export const DATA = {
     {
       school: "Lassonde School of Engineering",
       href: "https://lassonde.yorku.ca/",
-      degree: "Bachelor of Science in Computer Science (Honors)",
-      logoUrl: "/waterloo.png",
+      degree: "Bachelor of Science in Computer Science (Honours)",
+      logoUrl: "/lassonde_school_of_engineering_york_university_logo.png",
       start: "2022",
       end: "2026",
     },
     {
       school: "Monarch Park Collegiate Institute",
-      href: "https://ibo.org",
+      href: "https://www.tdsb.on.ca/Find-your/Schools/schno/5535",
       degree: "Ontario Secondary School Diploma (OSSD)",
       logoUrl: "/ib.png",
       start: "2018",
       end: "2022",
+    },
+  ],
+  certification: [
+    {
+      school: "Amazon Web Services",
+      href: "https://aws.amazon.com/certification/certified-cloud-practitioner//",
+      degree: "AWS Certified Cloud Practitioner",
+      logoUrl: "/amazon-web-services-logo.svg",
+      start: "2024",
+      end: "2027",
     },
   ],
   projects: [

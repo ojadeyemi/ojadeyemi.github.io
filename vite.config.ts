@@ -10,4 +10,14 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  base: "/",
+  build: {
+    outDir: "dist",
+    sourcemap: true,
+  },
+
+  server: {
+    port: 3000,
+    open: true,
+  },
 } satisfies UserConfig);
