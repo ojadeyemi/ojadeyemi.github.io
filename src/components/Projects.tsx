@@ -39,7 +39,7 @@ const Projects: React.FC = () => {
             </div>
             <div className="flex w-full flex-col gap-y-1">
               <div className="flex flex-row gap-x-2">
-                <span className="text-xs">U Sports Basketball Web App</span>
+                <span className="text-sm">U Sports Basketball Web App</span>
                 <a
                   href="https://github.com/ojadeyemi/USPORTS-BBALL-WEBAPP/"
                   className="flex items-center"
@@ -65,7 +65,7 @@ const Projects: React.FC = () => {
             </div>
             <div className="flex w-full flex-col gap-y-1">
               <div className="flex flex-row gap-x-2">
-                <span className="text-xs">mplbasketball</span>
+                <span className="text-sm">mplbasketball</span>
                 <a
                   href="https://github.com/mlsedigital/mplbasketball"
                   className="flex items-center"

@@ -24,13 +24,15 @@ const About = () => {
               </a>
               &nbsp;for the Toronto Raptors, Maple Leafs, TFC, Argos and
               associated fans. My current hobbies are team sports 🏀 ⚽ 🏈 and
-              music ˚♬ ﾟ. My current personal project involves building a web
-              application centered around the Canadian univserites basketball
-              program (U Sports). I am committed to continuous learning and
-              improving my skills within the computer science industry, with a
-              future goal of developing next-generation sports technology
-              products and contributing to the growth of the sports technology
-              industry in Canada.
+              music ˚♬ ﾟ.
+              <br />
+              My current personal project involves building a web application
+              centred around the Canadian university basketball program (U
+              Sports). I am committed to continuous learning and improving my
+              skills within the computer science industry with a the future goal
+              of developing next-generation sports technology products and
+              contributing to the growth of the sports technology industry in
+              Canada.
             </p>
           </div>
         </BlurFade>

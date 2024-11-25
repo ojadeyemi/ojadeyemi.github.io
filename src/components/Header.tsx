@@ -24,23 +24,24 @@ const Header: React.FC = () => {
                 alt="profile"
                 className={
                   order.indexOf(index + 1) === 0
-                    ? "absolute bottom-0 left-0 z-10 animate-to-front rounded-3xl"
+                    ? "absolute bottom-0 left-0 z-10 animate-to-front rounded-3xl no-drag"
                     : order.indexOf(index + 1) === 1
                       ? "absolute bottom-0 left-0 translate-x-2 translate-y-2 rotate-3 transform animate-to-middle rounded-3xl opacity-50"
                       : order.indexOf(index + 1) === order.length - 1
                         ? "absolute bottom-0 left-0 z-0 translate-x-2 translate-y-2 rotate-3 transform animate-fade-out rounded-3xl opacity-0"
                         : "hidden"
                 }
-                width={80} // Adjusted width to avoid large images affecting performance
-                height={80} // Adjusted height to match the width
+                width={80}
+                height={80}
+                onContextMenu={(e) => e.preventDefault()}
               />
             </button>
           ))}
         </div>
-        <div className="flex flex-col pb-8">
+        <div className="flex flex-col pb-6">
           <span className="scroll-m-20 text-lg tracking-tight">OJ Adeyemi</span>
           <div className="flex items-center">
-            <span className="text-sm">Software Engineer</span>
+            <span className="text-sm">Engineer @ MLSE | CS Student</span>
             <ThemeButton />
           </div>
         </div>

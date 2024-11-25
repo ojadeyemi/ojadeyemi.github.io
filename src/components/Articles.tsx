@@ -11,7 +11,7 @@ const Articles = () => {
               src="/usportsmbb_efficiency_landscape.png"
               alt="U Sports Basketball Efficiency Landscape"
               width="40"
-              className="mr-2"
+              className="mr-2 no-drag"
             />
             <a
               href="https://www.linkedin.com/pulse/data-visualization-storytelling-my-data-driven-canada-oj-adeyemi-nyqcf/"
@@ -28,7 +28,7 @@ const Articles = () => {
               src="/usportswbb_bestprogram.png"
               alt="Most Successful U Sports Basketball Programs"
               width="40"
-              className="mr-2"
+              className="mr-2 no-drag"
             />
             <a
               href="https://www.linkedin.com/pulse/unveiling-dominance-discovering-most-successful-u-sports-oj-adeyemi-7doic/"

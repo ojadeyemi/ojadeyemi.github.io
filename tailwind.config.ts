@@ -122,10 +122,26 @@ const config = {
         "to-middle": "to-middle 0.3s ease-in-out",
         "fade-out": "fade-out 0.3s ease-in-out",
       },
+      userDrag: {
+        none: {
+          WebkitUserDrag: "none", // For Safari
+          userDrag: "none", // For modern browsers
+        },
+      },
     },
   },
 
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addUtilities }) {
+      addUtilities({
+        ".no-drag": {
+          "-webkit-user-drag": "none", // Disable drag on Webkit browsers
+          "user-drag": "none", // Disable drag on other browsers
+        },
+      });
+    },
+  ],
 } satisfies Config;
 
 export default config;
