@@ -4,7 +4,7 @@ import ThemeButton from "./ThemeButton";
 
 const Header: React.FC = () => {
   const [order, setOrder] = useState<Array<number>>(
-    Array.from({ length: 3 }, (_, i) => i + 1),
+    Array.from({ length: 4 }, (_, i) => i + 1),
   );
 
   const rotateOrder = () => {

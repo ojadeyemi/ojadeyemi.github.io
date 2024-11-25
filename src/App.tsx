@@ -9,7 +9,7 @@ const App = () => {
     <ThemeProvider>
       <TooltipProvider delayDuration={1}>
         <div
-          className="mx-auto min-h-screen max-w-xl bg-background px-6 py-12 font-sans antialiased sm:py-24"
+          className="mx-auto min-h-screen max-w-xl bg-background px-6 pb-12 font-sans antialiased sm:py-24"
           style={{ "--font-sans": "Inter, sans-serif" } as React.CSSProperties}
         >
           <Home />

@@ -10,7 +10,7 @@ const About = () => {
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
           <div className="flex flex-col gap-y-2">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm leading-relaxed text-muted-foreground">
               Hello! I&#39;m currently a computer science student located in
               Toronto. I&#39;m currently working at MLSE as an Engineer, where
               I&#39;ve been able to build &nbsp;
@@ -23,10 +23,14 @@ const About = () => {
                 Gen AI applications
               </a>
               &nbsp;for the Toronto Raptors, Maple Leafs, TFC, Argos and
-              associated fans.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              My current hobbies are team sports 🏀 ⚽ 🏈 and music ˚♬ ﾟ.
+              associated fans. My current hobbies are team sports 🏀 ⚽ 🏈 and
+              music ˚♬ ﾟ. My current personal project involves building a web
+              application centered around the Canadian univserites basketball
+              program (U Sports). I am committed to continuous learning and
+              improving my skills within the computer science industry, with a
+              future goal of developing next-generation sports technology
+              products and contributing to the growth of the sports technology
+              industry in Canada.
             </p>
           </div>
         </BlurFade>

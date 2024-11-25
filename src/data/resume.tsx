@@ -24,6 +24,7 @@ export const DATA = {
     "Node.js",
     "SQL",
     "Git",
+    "Unix Shell",
     "Docker",
     "Kubernetes",
     "AWS",
@@ -66,7 +67,7 @@ export const DATA = {
       logoUrl: "/MLSEDigitalLabs.svg",
       start: "May 2024",
       end: "Present",
-      description: "Building next gen AI innovative applications",
+      description: "Currently building innovative applications",
     },
   ],
   education: [
