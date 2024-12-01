@@ -5,19 +5,15 @@ import { Icons } from "@/components/icons";
 export const DATA = {
   name: "OJ Adeyemi",
   initials: "OJ",
-  url: "https://dillion.io",
-  location: "San Francisco, CA",
-  locationLink: "https://www.google.com/maps/place/sanfrancisco",
-  description:
-    "Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.",
+  url: "https://ojadeyemi.github.io/",
+  location: "Toronto, CA",
+  description: "Software Engineer. I love building things and helping people.",
   summary:
     "Hello! I'm currently a computer science student located in Toronto. I'm currently working at MLSE as an Engineer, where I've been able to build  [Gen AI applications](https://aws.amazon.com/blogs/media/maple-leaf-sports-entertainment-debuts-generative-ai-video-editor-to-deliver-content-to-fans-faster/) for the Toronto Raptors, Maple Leafs, TFC, Argos and associated fans.",
-  avatarUrl: "/me.png",
   skills: [
     "Python",
     "Java",
-    "C",
-    "HTML5",
+    "HTML",
     "CSS",
     "Javascript",
     "Typescript",
@@ -78,7 +74,7 @@ export const DATA = {
       degree: "Bachelor of Science in Computer Science (Honours)",
       logoUrl: "/lassonde_school_of_engineering_york_university_logo.png",
       start: "2022",
-      end: "Dec 2026",
+      end: "2026",
     },
   ],
   certification: [

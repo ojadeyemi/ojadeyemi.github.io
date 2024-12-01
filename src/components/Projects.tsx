@@ -73,7 +73,7 @@ const Projects: React.FC = () => {
               </div>
               <div className="flex w-full flex-col gap-y-1.5">
                 <div className="flex flex-row gap-x-2">
-                  <span className="text-sm">usports basketball web app</span>
+                  <span className="text-sm">usports bball web app</span>
                   <a
                     href="https://github.com/ojadeyemi/USPORTS-BBALL-WEBAPP/"
                     className="flex items-center"
