@@ -74,7 +74,7 @@ export const DATA = {
       degree: "Bachelor of Science in Computer Science (Honours)",
       logoUrl: "/lassonde_school_of_engineering_york_university_logo.png",
       start: "2022",
-      end: "2026",
+      end: "2027",
     },
   ],
   certification: [
