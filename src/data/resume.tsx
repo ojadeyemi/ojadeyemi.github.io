@@ -1,4 +1,4 @@
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon, NotebookText } from "lucide-react";
 
 import { Icons } from "@/components/icons";
 
@@ -16,6 +16,7 @@ export const DATA = {
   skills: [
     "Python",
     "Java",
+    "C",
     "HTML5",
     "CSS",
     "Javascript",
@@ -31,7 +32,7 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/resume.pdf", icon: NotebookIcon, label: "Resume" },
+    { href: "/resume.pdf", icon: NotebookText, label: "Resume" },
   ],
   contact: {
     email: "ojieadeyemi@gmail.com",
@@ -77,25 +78,25 @@ export const DATA = {
       degree: "Bachelor of Science in Computer Science (Honours)",
       logoUrl: "/lassonde_school_of_engineering_york_university_logo.png",
       start: "2022",
-      end: "2026",
-    },
-    {
-      school: "Monarch Park Collegiate Institute",
-      href: "https://www.tdsb.on.ca/Find-your/Schools/schno/5535",
-      degree: "Ontario Secondary School Diploma (OSSD)",
-      logoUrl: "/ib.png",
-      start: "2018",
-      end: "2022",
+      end: "Dec 2026",
     },
   ],
   certification: [
     {
       school: "Amazon Web Services",
-      href: "https://aws.amazon.com/certification/certified-cloud-practitioner//",
-      degree: "AWS Certified Cloud Practitioner",
+      href: "#certification",
+      degree: "Cloud Practitioner - Foundational",
       logoUrl: "/amazon-web-services-logo.svg",
-      start: "2024",
-      end: "2027",
+      start: "2025",
+      end: "2028",
+    },
+    {
+      school: "Amazon Web Services",
+      href: "#certification",
+      degree: "Machine Learning Engineer - Associate",
+      logoUrl: "/amazon-web-services-logo.svg",
+      start: "2025",
+      end: "2028",
     },
   ],
   projects: [

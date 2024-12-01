@@ -1,5 +1,5 @@
-import { Badge } from "./ui/badge";
-import BlurFade from "./ui/blur-fade";
+import { Badge } from "@/components/ui/badge";
+import BlurFade from "@/components/ui/blur-fade";
 import { BLUR_FADE_DELAY } from "@/constants/constant";
 import { DATA } from "@/data/resume";
 
@@ -12,7 +12,7 @@ const Skills = () => {
         </BlurFade>
         <div className="flex flex-wrap gap-1">
           {DATA.skills.map((skill, id) => (
-            <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.2}>
+            <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.3}>
               <Badge key={skill}>{skill}</Badge>
             </BlurFade>
           ))}

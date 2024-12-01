@@ -1,19 +1,19 @@
 import { ResumeCard } from "./resume-card";
-import BlurFade from "./ui/blur-fade";
+import BlurFade from "@/components/ui/blur-fade";
 import { BLUR_FADE_DELAY } from "@/constants/constant";
 import { DATA } from "@/data/resume";
 
 const Certification = () => {
   return (
-    <section id="education">
+    <section id="certification">
       <div className="flex flex-col gap-y-3">
-        <BlurFade delay={BLUR_FADE_DELAY * 7}>
+        <BlurFade delay={BLUR_FADE_DELAY * 8}>
           <h2 className="text-md font-bold">Certification</h2>
         </BlurFade>
         {DATA.certification.map((education, id) => (
           <BlurFade
-            key={education.school}
-            delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+            key={education.school + id}
+            delay={BLUR_FADE_DELAY * 9 + id * 0.05}
           >
             <ResumeCard
               key={education.school}

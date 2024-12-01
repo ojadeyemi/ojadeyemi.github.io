@@ -36,7 +36,7 @@ export const ResumeCard: React.FC<ResumeCardProps> = ({
     if (description) {
       setIsExpanded(!isExpanded);
     } else if (href) {
-      window.open(href, "_blank", "noopener,noreferrer");
+      window.open(href, "_self");
     }
   };
 
@@ -44,7 +44,7 @@ export const ResumeCard: React.FC<ResumeCardProps> = ({
     if (description) {
       setIsExpanded(!isExpanded);
     } else if (href) {
-      window.open(href, "_blank", "noopener,noreferrer");
+      window.open(href, "_blank");
     }
   };
 
@@ -57,7 +57,7 @@ export const ResumeCard: React.FC<ResumeCardProps> = ({
         </Avatar>
       </div>
       <div className="group ml-4 flex-grow flex-col items-center">
-        <CardHeader>
+        <CardHeader className="space-y-[2px]">
           <div className="flex items-center justify-between gap-x-2 text-base">
             <h3
               onClick={handleTitleClick}
@@ -85,7 +85,7 @@ export const ResumeCard: React.FC<ResumeCardProps> = ({
                 )}
               />
             </h3>
-            <div className="text-right text-xs tabular-nums text-muted-foreground sm:text-sm">
+            <div className="text-right text-[9px] tabular-nums leading-4 text-muted-foreground sm:text-sm">
               {period}
             </div>
           </div>

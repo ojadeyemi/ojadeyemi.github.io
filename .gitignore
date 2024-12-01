@@ -8,12 +8,21 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-.yarn
+
 dist
 dist-ssr
 .yarn/install-state.gz
 *.local
 tsconfig.tsbuildinfo
+
+# yarn 
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # Editor directories and files
 .vscode/*

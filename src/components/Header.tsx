@@ -2,9 +2,10 @@ import React, { useState } from "react";
 
 import ThemeButton from "./ThemeButton";
 
+const NO_OF_PHOTOS = 5;
 const Header: React.FC = () => {
   const [order, setOrder] = useState<Array<number>>(
-    Array.from({ length: 4 }, (_, i) => i + 1),
+    Array.from({ length: NO_OF_PHOTOS }, (_, i) => i + 1),
   );
 
   const rotateOrder = () => {
@@ -16,8 +17,8 @@ const Header: React.FC = () => {
   return (
     <section id="Header">
       <div className="mt-10 flex h-36 flex-row items-end gap-x-8 md:pt-1">
-        <div className="relative h-fit w-24">
-          {Array.from({ length: 12 }).map((_, index) => (
+        <div className="relative h-fit w-28">
+          {Array.from({ length: NO_OF_PHOTOS }).map((_, index) => (
             <button key={index} onClick={() => rotateOrder()}>
               <img
                 src={`/profile${index + 1}.jpg`}
