@@ -15,12 +15,12 @@ const ProjectPage: React.FC = () => {
   return (
     <div className="mt-10 flex min-h-[100dvh] flex-col space-y-10 py-10 sm:mt-0">
       {/* Header Section */}
-      <BlurFade delay={BLUR_FADE_DELAY * 1}>
+      <BlurFade delay={BLUR_FADE_DELAY * 0.5}>
         <header className="flex items-center justify-between">
           {/* Home Link */}
           <Link
             to="/"
-            className="flex items-center gap-2 text-base font-semibold text-primary transition hover:text-primary/70"
+            className="flex items-center gap-2 text-base font-semibold text-primary transition hover:text-primary/60"
           >
             <Home className="h-3 w-3" />
             <span>Home</span>
@@ -37,7 +37,7 @@ const ProjectPage: React.FC = () => {
       </BlurFade>
 
       {/* Introduction Section */}
-      <BlurFade delay={BLUR_FADE_DELAY * 2}>
+      <BlurFade delay={BLUR_FADE_DELAY * 1}>
         <section className="text-center">
           <p className="text-md text-gray-600">
             Here are some of the projects I have enjoyed working on during my

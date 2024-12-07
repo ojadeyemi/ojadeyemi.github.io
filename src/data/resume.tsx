@@ -131,7 +131,7 @@ export const DATA = {
     {
       title: "mpl-basketball",
       href: "https://pypi.org/project/mplbasketball/",
-      dates: "September 2024 - Present",
+      dates: "Sept 2024 - Present",
       active: true,
       description:
         "A Python plotting library for visualization of basketball data.",
@@ -160,7 +160,7 @@ export const DATA = {
     {
       title: "usports basketball web application",
       href: "https://github.com/ojadeyemi/USPORTS-BBALL-WEBAPP",
-      dates: "March 2024 - August 2024",
+      dates: "March 2024 - Aug 2024",
       active: false,
       description:
         "A web application for the U Sports Basketball League, offering data-driven insights and analytics for basketball enthusiasts, coaches, players, fans, and stakeholders like the CEBL.",
@@ -187,34 +187,9 @@ export const DATA = {
       video: "",
     },
     {
-      title: "MLSE SPL Open Data Challenge",
-      href: "https://github.com/ojadeyemi/mlse-spl-open-data-challenge/blob/main/README.md",
-      dates: "September 2024 - November 2024",
-      active: false,
-      description:
-        "Participated in a data science competition analyzing free-throw motion data to understand how body movements impact shooting accuracy.",
-      technologies: [
-        "Python",
-        "Numpy",
-        "Matplotlib",
-        "Jupyter Notebook",
-        "Data Science",
-        "Biomechanics",
-      ],
-      links: [
-        {
-          type: "Source",
-          href: "https://github.com/ojadeyemi/mlse-spl-open-data-challenge",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "./animation.mp4",
-    },
-    {
       title: "U Sports and CEBL Data Analysis",
       href: "https://github.com/ojadeyemi/USPORT-BBALL-DATA-ANALYSIS",
-      dates: "February 2024 - Present",
+      dates: "Feb 2024 - Present",
       active: false,
       description:
         "A data analytics project for U Sports and the CEBL, focused on collecting basketball data to generate meaningful insights and advanced analytics, including visualizations and graphs for deeper understanding of the game.",
@@ -237,12 +212,43 @@ export const DATA = {
       video: "",
     },
     {
+      title: "MLSE SPL Open Data Challenge",
+      href: "https://github.com/ojadeyemi/mlse-spl-open-data-challenge/blob/main/README.md",
+      dates: "Sept 2024 - Nov 2024",
+      active: false,
+      description:
+        "Participated in a data science competition analyzing free-throw motion data to understand how body movements impact shooting accuracy.",
+      technologies: [
+        "Python",
+        "Numpy",
+        "Matplotlib",
+        "Jupyter Notebook",
+        "Data Science",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/ojadeyemi/mlse-spl-open-data-challenge",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "./animation.mp4",
+    },
+
+    {
       title: "Portfolio Website",
       href: "https://ojadeyemi.github.io/",
       dates: "Nov 2024 - Present",
       active: false,
       description: "You are looking at it 👀.",
-      technologies: ["React", "TypeScript", "TailwindCSS", "Github Actions"],
+      technologies: [
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Framer Motion",
+        "Github Actions",
+      ],
       links: [
         {
           type: "Website",

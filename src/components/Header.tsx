@@ -16,13 +16,14 @@ const Header: React.FC = () => {
 
   return (
     <section id="Header">
-      <div className="flex h-36 flex-row items-end gap-x-8 md:pt-1">
+      <div className="flex h-36 flex-row items-end gap-x-4 md:gap-x-6 md:pt-1">
         <div className="relative h-fit w-28">
           {Array.from({ length: NO_OF_PHOTOS }).map((_, index) => (
             <button key={index} onClick={() => rotateOrder()}>
               <img
                 src={`/profile${index + 1}.jpg`}
                 alt="profile"
+                rel="preload"
                 className={
                   order.indexOf(index + 1) === 0
                     ? "absolute bottom-0 left-0 z-10 animate-to-front rounded-3xl no-drag"
@@ -42,7 +43,9 @@ const Header: React.FC = () => {
         <div className="flex flex-col pb-6">
           <span className="scroll-m-20 text-lg tracking-tight">OJ Adeyemi</span>
           <div className="flex items-center">
-            <span className="text-sm">Engineer @ MLSE | CS Student</span>
+            <span className="mx-1 text-xs md:text-sm">
+              Engineer @ MLSE | CS Student
+            </span>
             <ThemeButton />
           </div>
         </div>

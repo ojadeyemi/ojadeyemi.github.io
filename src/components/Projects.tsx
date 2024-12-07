@@ -7,7 +7,7 @@ import { BLUR_FADE_DELAY } from "@/constants/constant";
 const Projects: React.FC = () => {
   return (
     <section id="projects">
-      <BlurFade delay={BLUR_FADE_DELAY * 9}>
+      <BlurFade delay={BLUR_FADE_DELAY * 15}>
         <div className="flex flex-col gap-y-5">
           <h2 className="text-md font-bold">Projects</h2>
 

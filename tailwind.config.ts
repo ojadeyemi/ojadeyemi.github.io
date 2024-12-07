@@ -137,6 +137,7 @@ const config = {
       addUtilities({
         ".no-drag": {
           "-webkit-user-drag": "none", // Disable drag on Webkit browsers
+          "-webkit-touch-callout": "none", // Disable long press menu on iOS Safari
           "user-drag": "none", // Disable drag on other browsers
         },
       });

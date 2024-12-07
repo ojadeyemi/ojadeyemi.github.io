@@ -1,11 +1,14 @@
 import { Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
 import "./globals.css"; // Import your global styles
 import Navbar from "./components/navbar";
-import ProjectPage from "./pages/Projects";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Home from "@/pages/Home";
+
+// Lazy load the ProjectPage component
+const ProjectPage = lazy(() => import("./pages/Projects"));
 
 const App = () => {
   return (
@@ -17,7 +20,14 @@ const App = () => {
         >
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<ProjectPage />} />
+            <Route
+              path="/projects"
+              element={
+                <Suspense fallback={<></>}>
+                  <ProjectPage />
+                </Suspense>
+              }
+            />
           </Routes>
           <Navbar />
         </div>

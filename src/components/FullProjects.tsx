@@ -7,7 +7,7 @@ import { DATA } from "@/data/resume";
 
 const FullProjects: React.FC = () => {
   return (
-    <div className="mx-auto grid max-w-[800px] grid-cols-2 gap-4 sm:gap-6">
+    <div className="mx-auto grid max-w-[800px] grid-cols-2 gap-3 sm:gap-5">
       {DATA.projects.map((project, id) => (
         <BlurFade key={project.title} delay={BLUR_FADE_DELAY * 10 + id * 0.5}>
           <ProjectCard

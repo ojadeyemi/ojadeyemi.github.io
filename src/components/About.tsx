@@ -38,7 +38,7 @@ const About = () => {
               &nbsp; by Sports Business Journal, recognizing significant
               advancements in sports technology. It also has the potential to
               win the coveted title of{" "}
-              <strong>Sports Technology of the Year</strong>.
+              <strong>2025 Sports Technology of the Year</strong>.
             </p>
 
             <p className="text-sm leading-relaxed text-muted-foreground">
