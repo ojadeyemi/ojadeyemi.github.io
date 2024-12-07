@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import About from "@/components/About";
 import Articles from "@/components/Articles";
@@ -10,8 +10,12 @@ import Skills from "@/components/Skills";
 import Work from "@/components/Work";
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
-    <main className="flex min-h-[100dvh] flex-col space-y-10 pb-10">
+    <main className="flex min-h-[100dvh] flex-col space-y-10 py-10">
       <Header />
 
       <About />

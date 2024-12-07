@@ -1,4 +1,4 @@
-import { HomeIcon, NotebookIcon, NotebookText } from "lucide-react";
+import { HomeIcon, FolderSearch, NotebookText } from "lucide-react";
 
 import { Icons } from "@/components/icons";
 
@@ -24,11 +24,12 @@ export const DATA = {
     "Unix Shell",
     "Docker",
     "Kubernetes",
+    "Helm",
     "AWS",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/projects", icon: NotebookIcon, label: "Projects" },
+    { href: "#/projects", icon: FolderSearch, label: "Projects" },
     { href: "/resume.pdf", icon: NotebookText, label: "Resume" },
   ],
   contact: {
@@ -209,6 +210,31 @@ export const DATA = {
       ],
       image: "",
       video: "./animation.mp4",
+    },
+    {
+      title: "U Sports and CEBL Data Analysis",
+      href: "https://github.com/ojadeyemi/USPORT-BBALL-DATA-ANALYSIS",
+      dates: "February 2024 - Present",
+      active: false,
+      description:
+        "A data analytics project for U Sports and the CEBL, focused on collecting basketball data to generate meaningful insights and advanced analytics, including visualizations and graphs for deeper understanding of the game.",
+      technologies: [
+        "Python",
+        "Pandas",
+        "Matplotlib",
+        "Seaborn",
+        "Plotly",
+        "Data Science",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/ojadeyemi/USPORT-BBALL-DATA-ANALYSIS",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/usportsmbb_efficiency_landscape.png",
+      video: "",
     },
     {
       title: "Portfolio Website",

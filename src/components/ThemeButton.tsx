@@ -14,13 +14,15 @@ const ThemeButton = React.forwardRef<HTMLButtonElement>((props, ref) => {
 
   return (
     <Button
-      ref={ref} // Pass down the ref
+      ref={ref}
       variant="ghost"
       size="icon"
       type="button"
+      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`} // Accessible label
+      title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
       className="px-2"
       onClick={toggleTheme}
-      {...props} // Spread the rest of props to handle any additional ones
+      {...props}
     >
       {theme === "light" ? (
         <SunIcon className="h-[1.2rem] w-[1.2rem]" />
@@ -31,6 +33,6 @@ const ThemeButton = React.forwardRef<HTMLButtonElement>((props, ref) => {
   );
 });
 
-ThemeButton.displayName = "ThemeButton"; // Name for debugging
+ThemeButton.displayName = "ThemeButton";
 
 export default ThemeButton;

@@ -1,7 +1,6 @@
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import React from "react";
-
-import ScrollToTopLink from "./ScrollToTopLink";
+import { Link } from "react-router-dom";
 import BlurFade from "@/components/ui/blur-fade";
 import { BLUR_FADE_DELAY } from "@/constants/constant";
 
@@ -27,6 +26,8 @@ const Projects: React.FC = () => {
                     className="flex items-center"
                     rel="noopener noreferrer"
                     target="_blank"
+                    aria-label="Open the U Sports Basketball Python package on PyPI in a new tab"
+                    title="Open PyPI project page"
                   >
                     <ExternalLinkIcon className="flex self-center hover:text-muted-foreground" />
                   </a>
@@ -50,10 +51,12 @@ const Projects: React.FC = () => {
                 <div className="flex flex-row gap-x-2">
                   <span className="text-sm">mplbasketball</span>
                   <a
-                    href="https://github.com/mlsedigital/mplbasketball"
+                    href="https://pypi.org/project/mplbasketball/"
                     className="flex items-center"
                     rel="noopener noreferrer"
                     target="_blank"
+                    aria-label="Open the mplbasketball Python package on PyPI in a new tab"
+                    title="Open PyPI project page"
                   >
                     <ExternalLinkIcon className="flex self-center hover:text-muted-foreground" />
                   </a>
@@ -80,6 +83,8 @@ const Projects: React.FC = () => {
                     className="flex items-center"
                     rel="noopener noreferrer"
                     target="_blank"
+                    aria-label="Open USPORTS-BBALL-WEBAPP on GitHub in a new tab"
+                    title="Open GitHub"
                   >
                     <ExternalLinkIcon className="flex self-center hover:text-muted-foreground" />
                   </a>
@@ -106,6 +111,8 @@ const Projects: React.FC = () => {
                     className="flex items-center"
                     rel="noopener noreferrer"
                     target="_blank"
+                    aria-label="Open the MLSE SPL Open Data Challenge README on GitHub in a new tab"
+                    title="Open GitHub README"
                   >
                     <ExternalLinkIcon className="flex self-center hover:text-muted-foreground" />
                   </a>
@@ -120,7 +127,12 @@ const Projects: React.FC = () => {
           </>
         </div>
         <>
-          <ScrollToTopLink />
+          <Link
+            to="/projects"
+            className="ml-auto text-right text-[10px] font-medium text-blue-500 transition hover:text-blue-700 hover:underline focus:text-blue-700 active:text-blue-800"
+          >
+            See more...
+          </Link>
         </>
       </BlurFade>
     </section>
