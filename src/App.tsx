@@ -1,5 +1,5 @@
+import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import { lazy, Suspense } from "react";
 
 import "./globals.css"; // Import your global styles
 import Navbar from "./components/navbar";

@@ -1,4 +1,4 @@
-import { HomeIcon, FolderSearch, NotebookText } from "lucide-react";
+import { FolderSearch, HomeIcon, NotebookText } from "lucide-react";
 
 import { Icons } from "@/components/icons";
 
