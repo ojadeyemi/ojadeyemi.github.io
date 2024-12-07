@@ -1,4 +1,4 @@
-import { ResumeCard } from "./resume-card";
+import { ResumeCard } from "./widgets/resume-card";
 import BlurFade from "@/components/ui/blur-fade";
 import { BLUR_FADE_DELAY } from "@/constants/constant";
 import { DATA } from "@/data/resume";

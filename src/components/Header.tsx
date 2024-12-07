@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 
   return (
     <section id="Header">
-      <div className="mt-10 flex h-36 flex-row items-end gap-x-8 md:pt-1">
+      <div className="flex h-36 flex-row items-end gap-x-8 md:pt-1">
         <div className="relative h-fit w-28">
           {Array.from({ length: NO_OF_PHOTOS }).map((_, index) => (
             <button key={index} onClick={() => rotateOrder()}>

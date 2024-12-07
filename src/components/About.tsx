@@ -24,16 +24,34 @@ const About = () => {
               </a>
               &nbsp; for the Toronto Raptors, Maple Leafs, TFC, and Argonauts.
             </p>
-
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Outside of work, I enjoy team sports 🏀 ⚽ 🏈 and music ˚♬ ﾟ.
-              These hobbies keep me active and inspired in my personal life.
+              One of these applications has been &nbsp;
+              <a
+                href="https://www.sports-business-awards-tech.com/2025/2025-nominees#:~:text=MLSE%20Digital%20Labs%E2%80%99%20Generative%20Video%20Editor"
+                className="inline underline transition duration-150 ease-in-out hover:text-purple-300 active:text-purple-600"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                nominated for the prestigious Sports Business Awards: Tech Best
+                in AI category
+              </a>
+              &nbsp; by Sports Business Journal, recognizing significant
+              advancements in sports technology. It also has the potential to
+              win the coveted title of{" "}
+              <strong>Sports Technology of the Year</strong>.
             </p>
 
             <p className="text-sm leading-relaxed text-muted-foreground">
-              I’m passionate about growing my skills in computer science, with a
-              goal of continous innovation and contributing to the sports
-              technology industry.
+              Outside of work, I enjoy team sports 🏀 ⚽ 🏈 and music ˚♬ ﾟ.
+              These hobbies keep me active, motivated, and creatively inspired.
+            </p>
+
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              I’m passionate about developing my computer science skills, with a
+              focus on continuous innovation and advancing the sports technology
+              industry. My goal is to solve complex problems and design scalable
+              software architectures that are efficient, reliable, and built for
+              the future.
             </p>
           </div>
         </BlurFade>

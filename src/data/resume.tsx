@@ -1,4 +1,4 @@
-import { HomeIcon, NotebookText } from "lucide-react";
+import { HomeIcon, NotebookIcon, NotebookText } from "lucide-react";
 
 import { Icons } from "@/components/icons";
 
@@ -28,6 +28,7 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
+    { href: "/projects", icon: NotebookIcon, label: "Projects" },
     { href: "/resume.pdf", icon: NotebookText, label: "Resume" },
   ],
   contact: {
@@ -97,64 +98,139 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Chat Collect",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      title: "usports-basketball",
+      href: "https://pypi.org/project/usports-basketball/",
+      dates: "Aug 2024 - Present",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+        "A Python package designed to provide real-time statistics for U Sports basketball, Canada's national university league.",
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
+        "Python",
+        "Pandas",
+        "BeautifulSoup",
+        "Playwright",
+        "Pytest",
+        "Github Actions",
       ],
       links: [
         {
           type: "Website",
-          href: "https://chatcollect.com",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
-    },
-    {
-      title: "Magic UI",
-      href: "https://magicui.design",
-      dates: "June 2023 - Present",
-      active: true,
-      description:
-        "Designed, developed and sold animated UI components for developers.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://magicui.design",
+          href: "https://pypi.org/project/usports-basketball/",
           icon: <Icons.globe className="size-3" />,
         },
         {
           type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
+          href: "https://github.com/ojadeyemi/usports-basketball",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      video: "",
+    },
+    {
+      title: "mpl-basketball",
+      href: "https://pypi.org/project/mplbasketball/",
+      dates: "September 2024 - Present",
+      active: true,
+      description:
+        "A Python plotting library for visualization of basketball data.",
+      technologies: [
+        "Python",
+        "Matplotlib",
+        "Numpy",
+        "Pytest",
+        "Github Actions",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://pypi.org/project/mplbasketball/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/mlsedigital/mplbasketball",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      video: "",
+    },
+    {
+      title: "usports basketball web application",
+      href: "https://github.com/ojadeyemi/USPORTS-BBALL-WEBAPP",
+      dates: "March 2024 - August 2024",
+      active: false,
+      description:
+        "A web application for the U Sports Basketball League, offering data-driven insights and analytics for basketball enthusiasts, coaches, players, fans, and stakeholders like the CEBL.",
+      technologies: [
+        "Python",
+        "Flask",
+        "MySQL",
+        "Sqlite",
+        "HTML",
+        "CSS",
+        "TailwindCSS",
+        "JavaScript",
+        "Docker",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/ojadeyemi/USPORTS-BBALL-WEBAPP",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image:
+        "https://github.com/ojadeyemi/USPORTS-BBALL-WEBAPP/blob/main/screenshots/image3.png?raw=true",
+      video: "",
+    },
+    {
+      title: "MLSE SPL Open Data Challenge",
+      href: "https://github.com/ojadeyemi/mlse-spl-open-data-challenge/blob/main/README.md",
+      dates: "September 2024 - November 2024",
+      active: false,
+      description:
+        "Participated in a data science competition analyzing free-throw motion data to understand how body movements impact shooting accuracy.",
+      technologies: [
+        "Python",
+        "Numpy",
+        "Matplotlib",
+        "Jupyter Notebook",
+        "Data Science",
+        "Biomechanics",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/ojadeyemi/mlse-spl-open-data-challenge",
           icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      video: "./animation.mp4",
+    },
+    {
+      title: "Portfolio Website",
+      href: "https://ojadeyemi.github.io/",
+      dates: "Nov 2024 - Present",
+      active: false,
+      description: "You are looking at it 👀.",
+      technologies: ["React", "TypeScript", "TailwindCSS", "Github Actions"],
+      links: [
+        {
+          type: "Website",
+          href: "https://ojadeyemi.github.io",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/ojadeyemi/ojadeyemi.github.io",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/android-chrome-512x512.png",
+      video: "",
     },
   ],
 } as const;

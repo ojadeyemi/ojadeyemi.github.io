@@ -1,6 +1,7 @@
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import React from "react";
 
+import ScrollToTopLink from "./ScrollToTopLink";
 import BlurFade from "@/components/ui/blur-fade";
 import { BLUR_FADE_DELAY } from "@/constants/constant";
 
@@ -118,6 +119,9 @@ const Projects: React.FC = () => {
             </div>
           </>
         </div>
+        <>
+          <ScrollToTopLink />
+        </>
       </BlurFade>
     </section>
   );
