@@ -51,7 +51,7 @@ export const DATA = {
 
       Email: {
         name: "Send Email",
-        url: "ojieadeyemi@gmail.com",
+        url: "mailto:ojieadeyemi@gmail.com",
         icon: Icons.email,
         navbar: true,
       },
@@ -104,7 +104,7 @@ export const DATA = {
       dates: "Aug 2024 - Present",
       active: true,
       description:
-        "A Python package designed to provide real-time statistics for U Sports basketball, Canada's national university league.",
+        "A Python package designed to provide current statistics for U Sports basketball, Canada's national university league.",
       technologies: [
         "Python",
         "Pandas",
@@ -134,7 +134,7 @@ export const DATA = {
       dates: "Sept 2024 - Present",
       active: true,
       description:
-        "A Python plotting library for visualization of basketball data.",
+        "Open source contributor and maintainer of python plotting library for visualization of basketball data.",
       technologies: [
         "Python",
         "Matplotlib",
@@ -192,7 +192,7 @@ export const DATA = {
       dates: "Feb 2024 - Present",
       active: false,
       description:
-        "A data analytics project for U Sports and the CEBL, focused on collecting basketball data to generate meaningful insights and advanced analytics, including visualizations and graphs for deeper understanding of the game.",
+        "Analyzing basketball data to deliver insights, advanced analytics, and visualizations for a deeper understanding of the game..",
       technologies: [
         "Python",
         "Pandas",
@@ -208,8 +208,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/usportsmbb_efficiency_landscape.png",
-      video: "",
+      image: "",
+      video: "/graphs_slideshow.mp4",
     },
     {
       title: "MLSE SPL Open Data Challenge",
@@ -217,7 +217,7 @@ export const DATA = {
       dates: "Sept 2024 - Nov 2024",
       active: false,
       description:
-        "Participated in a data science competition analyzing free-throw motion data to understand how body movements impact shooting accuracy.",
+        "Analyzed free-throw motion data to understand the impact of body movements on shooting accuracy.",
       technologies: [
         "Python",
         "Numpy",

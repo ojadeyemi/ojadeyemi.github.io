@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";

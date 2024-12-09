@@ -19,7 +19,11 @@ const Header: React.FC = () => {
       <div className="flex h-36 flex-row items-end gap-x-4 md:gap-x-6 md:pt-1">
         <div className="relative h-fit w-28">
           {Array.from({ length: NO_OF_PHOTOS }).map((_, index) => (
-            <button key={index} onClick={() => rotateOrder()}>
+            <button
+              key={index}
+              onClick={() => rotateOrder()}
+              aria-label="Next Image"
+            >
               <img
                 src={`/profile${index + 1}.jpg`}
                 alt="profile"

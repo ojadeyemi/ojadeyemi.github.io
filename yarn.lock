@@ -1482,9 +1482,9 @@ __metadata:
   linkType: hard
 
 "@ungap/structured-clone@npm:^1.0.0":
-  version: 1.2.0
-  resolution: "@ungap/structured-clone@npm:1.2.0"
-  checksum: 10c0/8209c937cb39119f44eb63cf90c0b73e7c754209a6411c707be08e50e29ee81356dca1a848a405c8bdeebfe2f5e4f831ad310ae1689eeef65e7445c090c6657d
+  version: 1.2.1
+  resolution: "@ungap/structured-clone@npm:1.2.1"
+  checksum: 10c0/127afbcc75ff1532f7b1eb85ee992f9faa70e8d5bb2558da05355d423b966fc279d0a485bf19da2883280e7c299ae4170809a72e78eab086da71c6bcdda5d1e2
   languageName: node
   linkType: hard
 
@@ -1529,11 +1529,9 @@ __metadata:
   linkType: hard
 
 "agent-base@npm:^7.1.0, agent-base@npm:^7.1.2":
-  version: 7.1.2
-  resolution: "agent-base@npm:7.1.2"
-  dependencies:
-    debug: "npm:^4.3.4"
-  checksum: 10c0/a1e8b43f53452b0ebd84792bbb2443ab7aff84e2602f92ce1ee703628962823c5efee38bc4f78ff6500b9df93b6260b451ae882ef248fcd3a740caa849f1b9c7
+  version: 7.1.3
+  resolution: "agent-base@npm:7.1.3"
+  checksum: 10c0/6192b580c5b1d8fb399b9c62bf8343d76654c2dd62afcb9a52b2cf44a8b6ace1e3b704d3fe3547d91555c857d3df02603341ff2cb961b9cfe2b12f9f3c38ee11
   languageName: node
   linkType: hard
 
@@ -2856,7 +2854,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^11.11.10":
+"framer-motion@npm:^11.13.1":
   version: 11.13.1
   resolution: "framer-motion@npm:11.13.1"
   dependencies:
@@ -4407,7 +4405,7 @@ __metadata:
     eslint-plugin-import: "npm:^2.31.0"
     eslint-plugin-react-hooks: "npm:^5.1.0-rc.0"
     eslint-plugin-react-refresh: "npm:^0.4.9"
-    framer-motion: "npm:^11.11.10"
+    framer-motion: "npm:^11.13.1"
     globals: "npm:^15.9.0"
     husky: "npm:^9.1.6"
     lint-staged: "npm:^15.2.10"

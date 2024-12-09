@@ -39,7 +39,7 @@ const ProjectPage: React.FC = () => {
       {/* Introduction Section */}
       <BlurFade delay={BLUR_FADE_DELAY * 1}>
         <section className="text-center">
-          <p className="text-md text-gray-600">
+          <p className="text-md text-gray-500">
             Here are some of the projects I have enjoyed working on during my
             spare time.
           </p>
