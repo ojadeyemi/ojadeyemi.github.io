@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import HeroVideoDialog from "@/components/ui/hero-video-dialog";
+
 import About from "@/components/About";
 import Articles from "@/components/Articles";
 import Certification from "@/components/Certification";
@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Work from "@/components/Work";
+import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 
 const Home: React.FC = () => {
   useEffect(() => {

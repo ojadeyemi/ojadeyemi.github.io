@@ -2,16 +2,14 @@ import React, { useState } from "react";
 
 import ThemeButton from "./ThemeButton";
 
-const NO_OF_PHOTOS = 5;
+const NO_OF_PHOTOS = 7;
 const Header: React.FC = () => {
   const [order, setOrder] = useState<Array<number>>(
     Array.from({ length: NO_OF_PHOTOS }, (_, i) => i + 1),
   );
 
   const rotateOrder = () => {
-    const temp = [...order];
-    temp.push(temp.shift() as number);
-    setOrder(temp);
+    setOrder((prevOrder) => [...prevOrder.slice(1), prevOrder[0]]);
   };
 
   return (
@@ -37,8 +35,8 @@ const Header: React.FC = () => {
                         ? "absolute bottom-0 left-0 z-0 translate-x-2 translate-y-2 rotate-3 transform animate-fade-out rounded-3xl opacity-0"
                         : "hidden"
                 }
-                width={80}
-                height={80}
+                width={85}
+                height={85}
                 onContextMenu={(e) => e.preventDefault()}
               />
             </button>
