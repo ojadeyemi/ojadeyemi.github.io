@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import ThemeButton from "./ThemeButton";
 
-const NO_OF_PHOTOS = 7;
+const NO_OF_PHOTOS = 8;
 const Header: React.FC = () => {
   const [order, setOrder] = useState<Array<number>>(
     Array.from({ length: NO_OF_PHOTOS }, (_, i) => i + 1),

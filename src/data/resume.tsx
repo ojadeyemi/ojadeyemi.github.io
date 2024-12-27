@@ -13,6 +13,7 @@ export const DATA = {
   skills: [
     "Python",
     "Java",
+    "C",
     "HTML",
     "CSS",
     "Javascript",
@@ -26,6 +27,7 @@ export const DATA = {
     "Kubernetes",
     "Helm",
     "AWS",
+    "Google Cloud",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
