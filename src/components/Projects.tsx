@@ -130,7 +130,7 @@ const Projects: React.FC = () => {
         <>
           <Link
             to="/projects"
-            className="ml-auto text-right text-[10px] font-medium text-blue-500 transition hover:text-blue-700 hover:underline focus:text-blue-700 active:text-blue-800"
+            className="ml-auto text-right text-[10px] font-medium text-blue-800 transition hover:text-purple-800 hover:underline focus:text-blue-800 active:text-purple-800"
           >
             See more...
           </Link>
