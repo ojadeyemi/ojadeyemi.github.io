@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import ThemeButton from "./ThemeButton";
 
-const NO_OF_PHOTOS = 8;
+const NO_OF_PHOTOS = 9;
 const Header: React.FC = () => {
   const [order, setOrder] = useState<Array<number>>(
     Array.from({ length: NO_OF_PHOTOS }, (_, i) => i + 1),
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
               aria-label="Next Image"
             >
               <img
-                src={`/profile${index + 1}.jpg`}
+                src={`/profilepics/profile${index + 1}.jpg`}
                 alt="profile"
                 rel="preload"
                 className={

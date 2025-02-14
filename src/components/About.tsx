@@ -9,7 +9,7 @@ const About = () => {
           <h2 className="text-md font-bold">About</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
-          <div className="flex flex-col gap-y-2">
+          <div className="flex flex-col gap-y-3">
             <p className="text-sm leading-relaxed text-muted-foreground">
               Hello! I’m a computer science student based in Toronto and
               currently an Engineer at MLSE, where I help build &nbsp;
