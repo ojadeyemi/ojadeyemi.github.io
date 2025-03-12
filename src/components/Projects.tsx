@@ -8,7 +8,7 @@ import { BLUR_FADE_DELAY } from "@/constants/constant";
 const Projects: React.FC = () => {
   return (
     <section id="projects">
-      <BlurFade delay={BLUR_FADE_DELAY * 15}>
+      <BlurFade delay={BLUR_FADE_DELAY * 18}>
         <div className="flex flex-col gap-y-5">
           <h2 className="text-md font-bold">Projects</h2>
 
@@ -19,23 +19,24 @@ const Projects: React.FC = () => {
                   In Progress
                 </span>
               </div>
-              <div className="flex w-full flex-col gap-y-1">
+              <div className="flex w-full flex-col gap-y-1.5">
                 <div className="flex flex-row gap-x-2">
-                  <span className="text-sm">usports-basketball</span>
+                  <span className="text-sm">canada sports web app</span>
                   <a
-                    href="https://pypi.org/project/usports-basketball/"
+                    href="https://canada-sports-web.vercel.app/"
                     className="flex items-center"
                     rel="noopener noreferrer"
                     target="_blank"
-                    aria-label="Open the U Sports Basketball Python package on PyPI in a new tab"
-                    title="Open PyPI project page"
+                    aria-label="Open USPORTS-BBALL-WEBAPP on GitHub in a new tab"
+                    title="Open GitHub"
                   >
                     <ExternalLinkIcon className="flex self-center hover:text-muted-foreground" />
                   </a>
                 </div>
                 <span className="text-xs text-muted-foreground">
-                  A Python package designed to provide real-time statistics for
-                  U Sports basketball, Canada's national university league.
+                  A web app providing real-time stats, analytics, and content
+                  for Canadian sports leagues built for fans, teams, media and
+                  sport organizations.
                 </span>
               </div>
             </div>
@@ -74,26 +75,27 @@ const Projects: React.FC = () => {
           <>
             <div className="flex flex-row justify-start">
               <div className="w-80 sm:w-96">
-                <span className="text-sm text-muted-foreground">Paused</span>
+                <span className="text-sm text-muted-foreground">
+                  In Progress
+                </span>
               </div>
-              <div className="flex w-full flex-col gap-y-1.5">
+              <div className="flex w-full flex-col gap-y-1">
                 <div className="flex flex-row gap-x-2">
-                  <span className="text-sm">usports bball web app</span>
+                  <span className="text-sm">usports</span>
                   <a
-                    href="https://github.com/ojadeyemi/USPORTS-BBALL-WEBAPP/"
+                    href="https://github.com/ojadeyemi/usports"
                     className="flex items-center"
                     rel="noopener noreferrer"
                     target="_blank"
-                    aria-label="Open USPORTS-BBALL-WEBAPP on GitHub in a new tab"
-                    title="Open GitHub"
+                    aria-label="Open the U Sports Basketball Python package on PyPI in a new tab"
+                    title="Open PyPI project page"
                   >
                     <ExternalLinkIcon className="flex self-center hover:text-muted-foreground" />
                   </a>
                 </div>
                 <span className="text-xs text-muted-foreground">
-                  A web application for the U Sports Basketball League, offering
-                  data-driven insights and analytics for basketball enthusiasts,
-                  coaches, players, fans, and stakeholders like the CEBL.
+                  A Python package designed to provide real-time cumulative
+                  sports statistics from U Sports.
                 </span>
               </div>
             </div>

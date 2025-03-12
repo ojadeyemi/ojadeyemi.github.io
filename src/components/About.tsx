@@ -39,7 +39,8 @@ const About = () => {
                 </a>
               </strong>
               , I've contributed to AI-driven advancements in the sports
-              industry. One of these applications has also been &nbsp;
+              industry. One of these applications has also been nominated for
+              the prestigious&nbsp;
               <strong>
                 <a
                   href="https://www.sports-business-awards-tech.com/2025/2025-nominees#:~:text=MLSE%20Digital%20Labs%E2%80%99%20Generative%20Video%20Editor"
@@ -47,12 +48,10 @@ const About = () => {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  nominated for the prestigious Sports Business Awards: Tech
-                  Best in AI,
+                  2025 Sports Business Awards: Tech Best in AI, by Sports
+                  Business Journal.
                 </a>
               </strong>
-              &nbsp; by Sports Business Journal, with the potential to win 2025
-              Sports Technology of the Year.
             </p>
 
             <p className="text-sm leading-relaxed text-muted-foreground">

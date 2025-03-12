@@ -7,7 +7,7 @@ const Skills = () => {
   return (
     <section id="skills">
       <div className="flex flex-col gap-y-3">
-        <BlurFade delay={BLUR_FADE_DELAY * 7}>
+        <BlurFade delay={BLUR_FADE_DELAY * 10}>
           <h2 className="text-md font-bold">Skills</h2>
         </BlurFade>
         <div className="flex flex-wrap gap-1">
