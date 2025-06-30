@@ -1,7 +1,7 @@
 {
   "name": "OJ Adeyemi Portfolio",
   "short_name": "OJ Adeyemi",
-  "description": "Personal portfolio showcasing projects, skills, and experiences",
+  "description": "OJ's personal portfolio showcasing projects, skills, and experiences",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

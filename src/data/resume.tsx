@@ -64,7 +64,7 @@ export const DATA = {
       company: "Maple Leaf Sports & Entertainment",
       badges: [],
       href: "https://www.mlsedigital.com/",
-      title: "Data Engineer",
+      title: "Software & Data Engineer",
       logoUrl: "/MLSEDigitalLabs.svg",
       start: "May 2024",
       end: "Present",

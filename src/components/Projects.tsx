@@ -19,36 +19,6 @@ const Projects: React.FC = () => {
                   In Progress
                 </span>
               </div>
-              <div className="flex w-full flex-col gap-y-1.5">
-                <div className="flex flex-row gap-x-2">
-                  <span className="text-sm">canada sports web app</span>
-                  <a
-                    href="https://canada-sports-web.vercel.app/"
-                    className="flex items-center"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    aria-label="Open USPORTS-BBALL-WEBAPP on GitHub in a new tab"
-                    title="Open GitHub"
-                  >
-                    <ExternalLinkIcon className="flex self-center hover:text-muted-foreground" />
-                  </a>
-                </div>
-                <span className="text-xs text-muted-foreground">
-                  A web app providing real-time stats, analytics, and content
-                  for Canadian sports leagues built for fans, teams, media and
-                  sport organizations.
-                </span>
-              </div>
-            </div>
-          </>
-
-          <>
-            <div className="flex flex-row justify-start">
-              <div className="w-80 sm:w-96">
-                <span className="text-sm text-muted-foreground">
-                  In Progress
-                </span>
-              </div>
               <div className="flex w-full flex-col gap-y-1">
                 <div className="flex flex-row gap-x-2">
                   <span className="text-sm">mplbasketball</span>
