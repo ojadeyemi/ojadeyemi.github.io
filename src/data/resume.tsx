@@ -65,10 +65,10 @@ export const DATA = {
       badges: [],
       href: "https://www.mlsedigital.com/",
       title: "Software & Data Engineer",
-      logoUrl: "/MLSEDigitalLabs.svg",
+      logoUrl: "/mlse_green_logo.svg",
       start: "May 2024",
-      end: "Present",
-      description: "Currently building innovative applications",
+      end: "June 2025",
+      description: "Built innovative applications",
     },
   ],
   education: [
@@ -150,12 +150,12 @@ export const DATA = {
       video: "/video/animation.mp4",
     },
     {
-      title: "usports-basketball",
-      href: "https://pypi.org/project/usports-basketball/",
+      title: "usports",
+      href: "https://github.com/ojadeyemi/usports",
       dates: "Aug 2024 - Present",
       active: true,
       description:
-        "A Python package designed to provide current statistics for U Sports basketball, Canada's national university league.",
+        "A Python package designed to provide current sports statistics for U Sports, Canada's national university league.",
       technologies: [
         "Python",
         "Pandas",
@@ -167,12 +167,12 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://pypi.org/project/usports-basketball/",
+          href: "https://pypi.org/project/usports",
           icon: <Icons.globe className="size-3" />,
         },
         {
           type: "Source",
-          href: "https://github.com/ojadeyemi/usports-basketball",
+          href: "https://github.com/ojadeyemi/usports",
           icon: <Icons.github className="size-3" />,
         },
       ],

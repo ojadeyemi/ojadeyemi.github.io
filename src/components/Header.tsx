@@ -46,7 +46,7 @@ const Header: React.FC = () => {
           <span className="scroll-m-20 text-lg tracking-tight">OJ Adeyemi</span>
           <div className="flex items-center">
             <span className="mx-1 text-xs md:text-sm">
-              Engineer @ MLSE | CS Student
+              Studying computer science
             </span>
             <ThemeButton />
           </div>

@@ -12,7 +12,8 @@ const About = () => {
           <div className="flex flex-col gap-y-3">
             <p className="text-sm leading-relaxed text-muted-foreground">
               Hello! I’m a computer science student based in Toronto and
-              currently an Engineer at MLSE, where I help build &nbsp;
+              previously worked as an Engineer at MLSE, where I helped
+              build&nbsp;
               <strong>
                 <a
                   href="https://aws.amazon.com/blogs/media/maple-leaf-sports-entertainment-debuts-generative-ai-video-editor-to-deliver-content-to-fans-faster/"
@@ -23,7 +24,7 @@ const About = () => {
                   Gen AI applications
                 </a>
               </strong>
-              &nbsp; for the Toronto Raptors, Maple Leafs, TFC, Argonauts and
+              &nbsp;for the Toronto Raptors, Maple Leafs, TFC, Argonauts and
               other MLSE teams.
             </p>
             <p className="text-sm leading-relaxed text-muted-foreground">
@@ -38,9 +39,9 @@ const About = () => {
                   2025 NBA Team Innovation Award
                 </a>
               </strong>
-              , I've contributed to AI-driven advancements in the sports
-              industry. One of these applications has also been nominated for
-              the prestigious&nbsp;
+              , I contributed to AI-driven advancements in the sports industry.
+              One of these applications was also nominated for the
+              prestigious&nbsp;
               <strong>
                 <a
                   href="https://www.sports-business-awards-tech.com/2025/2025-nominees#:~:text=MLSE%20Digital%20Labs%E2%80%99%20Generative%20Video%20Editor"

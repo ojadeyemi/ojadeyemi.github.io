@@ -1,3 +1,4 @@
+// External imports
 import {
   ReactNode,
   createContext,
@@ -6,23 +7,30 @@ import {
   useState,
 } from "react";
 
+// Theme constants
+export const LIGHT = "light";
+export const DARK = "dark";
+
+type ThemeType = typeof LIGHT | typeof DARK;
+
 interface ThemeProviderProps {
   children: ReactNode;
 }
 
 interface ThemeContextProps {
-  theme: "light" | "dark";
-  setTheme: (theme: "light" | "dark") => void;
+  theme: ThemeType;
+  setTheme: (theme: ThemeType) => void;
 }
 
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState<"light" | "dark">(() => {
+  const [theme, setTheme] = useState<ThemeType>(() => {
     const savedTheme = localStorage.getItem("theme");
-    return (savedTheme as "light" | "dark") || "light";
+    return (savedTheme as ThemeType) || DARK;
   });
 
+  // Update document attribute and localStorage when theme changes
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
@@ -35,6 +43,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   );
 };
 
+// Custom hook to use theme context
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
