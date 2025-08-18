@@ -43,7 +43,9 @@ const Header: React.FC = () => {
           ))}
         </div>
         <div className="flex flex-col pb-6">
-          <span className="scroll-m-20 text-lg tracking-tight">OJ Adeyemi</span>
+          <span className="scroll-m-20 text-lg font-semibold tracking-tight">
+            OJ Adeyemi
+          </span>
           <div className="flex items-center">
             <span className="mx-1 text-xs md:text-sm">
               Studying computer science

@@ -61,6 +61,17 @@ export const DATA = {
   },
   work: [
     {
+      company: "NorthScore",
+      badges: [],
+      href: "https://www.northscore.ca/",
+      title: "Founder & CTO",
+      logoUrl: "/northscore.png",
+      start: "Jan 2026",
+      end: "Present",
+      description:
+        "Building a sports data platform focused on Canadian leagues.",
+    },
+    {
       company: "Maple Leaf Sports & Entertainment",
       badges: [],
       href: "https://www.mlsedigital.com/",

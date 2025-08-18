@@ -24,8 +24,8 @@ const About = () => {
                   Gen AI applications
                 </a>
               </strong>
-              &nbsp;for the Toronto Raptors, Maple Leafs, TFC, Argonauts and
-              other MLSE teams.
+              &nbsp;for the Toronto Raptors, Maple Leafs, TFC and other MLSE
+              teams.
             </p>
             <p className="text-sm leading-relaxed text-muted-foreground">
               As part of the team that won the{" "}
@@ -39,8 +39,8 @@ const About = () => {
                   2025 NBA Team Innovation Award
                 </a>
               </strong>
-              , I contributed to AI-driven advancements in the sports industry.
-              One of these applications was also nominated for the
+              , I contributed to multiple AI-driven advancements in the sports
+              industry. One of these applications was also nominated for the
               prestigious&nbsp;
               <strong>
                 <a
