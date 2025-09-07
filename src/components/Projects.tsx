@@ -1,103 +1,59 @@
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
-import React from "react";
 import { Link } from "react-router-dom";
 
 import BlurFade from "@/components/ui/blur-fade";
 import { BLUR_FADE_DELAY } from "@/constants/constant";
+import { DATA } from "@/data/resume";
 
-const Projects: React.FC = () => {
+export default function Projects() {
+  const topProjects = DATA.projects.slice(0, 2);
+  const mlseProject = DATA.projects.find(
+    (p) => p.title === "MLSE SPL Open Data Challenge",
+  );
+  const mplProject = DATA.projects.find((p) => p.title === "mpl-basketball");
+
+  const projectsToShow = topProjects;
+
+  if (mlseProject && !topProjects.find((p) => p.title === mlseProject.title)) {
+    projectsToShow.push(mlseProject);
+  }
+  if (mplProject && !projectsToShow.find((p) => p.title === mplProject.title)) {
+    projectsToShow.push(mplProject);
+  }
+
   return (
     <section id="projects">
       <BlurFade delay={BLUR_FADE_DELAY * 18}>
-        <div className="flex flex-col gap-y-5">
+        <div className="flex flex-col gap-y-3">
           <h2 className="text-md font-bold">Projects</h2>
 
-          <>
-            <div className="flex flex-row justify-start">
+          {projectsToShow.map((project, id) => (
+            <div className="flex flex-row justify-start" key={id}>
               <div className="w-80 sm:w-96">
                 <span className="text-sm text-muted-foreground">
-                  In Progress
+                  {project.active ? "In Progress" : "Done"}
                 </span>
               </div>
               <div className="flex w-full flex-col gap-y-1">
                 <div className="flex flex-row gap-x-2">
-                  <span className="text-sm">mplbasketball</span>
+                  <span className="text-sm">{project.title}</span>
                   <a
-                    href="https://pypi.org/project/mplbasketball/"
+                    href={project.href}
                     className="flex items-center"
                     rel="noopener noreferrer"
                     target="_blank"
-                    aria-label="Open the mplbasketball Python package on PyPI in a new tab"
-                    title="Open PyPI project page"
+                    aria-label={`Open ${project.title} in a new tab`}
+                    title="Open project page"
                   >
                     <ExternalLinkIcon className="flex self-center hover:text-muted-foreground" />
                   </a>
                 </div>
                 <span className="text-xs text-muted-foreground">
-                  Open source contributor and maintainer to a basketball
-                  plotting library created by the Sport Performance Lab team at
-                  MLSE
+                  {project.description}
                 </span>
               </div>
             </div>
-          </>
-
-          <>
-            <div className="flex flex-row justify-start">
-              <div className="w-80 sm:w-96">
-                <span className="text-sm text-muted-foreground">
-                  In Progress
-                </span>
-              </div>
-              <div className="flex w-full flex-col gap-y-1">
-                <div className="flex flex-row gap-x-2">
-                  <span className="text-sm">usports</span>
-                  <a
-                    href="https://github.com/ojadeyemi/usports"
-                    className="flex items-center"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    aria-label="Open the U Sports Basketball Python package on PyPI in a new tab"
-                    title="Open PyPI project page"
-                  >
-                    <ExternalLinkIcon className="flex self-center hover:text-muted-foreground" />
-                  </a>
-                </div>
-                <span className="text-xs text-muted-foreground">
-                  A Python package designed to provide real-time cumulative
-                  sports statistics from U Sports.
-                </span>
-              </div>
-            </div>
-          </>
-
-          <>
-            <div className="flex flex-row justify-start">
-              <div className="w-80 sm:w-96">
-                <span className="text-sm text-muted-foreground">Done</span>
-              </div>
-              <div className="flex w-full flex-col gap-y-1">
-                <div className="flex flex-row gap-x-1.5">
-                  <span className="text-sm">mlse-spl-open-data-challenge</span>
-                  <a
-                    href="https://github.com/ojadeyemi/mlse-spl-open-data-challenge/blob/main/README.md"
-                    className="flex items-center"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    aria-label="Open the MLSE SPL Open Data Challenge README on GitHub in a new tab"
-                    title="Open GitHub README"
-                  >
-                    <ExternalLinkIcon className="flex self-center hover:text-muted-foreground" />
-                  </a>
-                </div>
-                <span className="text-xs text-muted-foreground">
-                  Participated in a data science competition analyzing
-                  free-throw motion data to understand how body movements impact
-                  shooting accuracy.
-                </span>
-              </div>
-            </div>
-          </>
+          ))}
         </div>
         <>
           <Link
@@ -110,6 +66,4 @@ const Projects: React.FC = () => {
       </BlurFade>
     </section>
   );
-};
-
-export default Projects;
+}

@@ -9,8 +9,8 @@ const About = () => {
           <h2 className="text-md font-bold">About</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
-          <div className="flex flex-col gap-y-3">
-            <p className="text-sm leading-relaxed text-muted-foreground">
+          <div className="flex flex-col gap-y-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+            <p>
               Hello! I’m a computer science student based in Toronto and
               previously worked as an Engineer at MLSE, where I helped
               build&nbsp;
@@ -27,7 +27,7 @@ const About = () => {
               &nbsp;for the Toronto Raptors, Maple Leafs, TFC and other MLSE
               teams.
             </p>
-            <p className="text-sm leading-relaxed text-muted-foreground">
+            <p>
               As part of the team that won the{" "}
               <strong>
                 <a
@@ -55,7 +55,7 @@ const About = () => {
               </strong>
             </p>
 
-            <p className="text-sm leading-relaxed text-muted-foreground">
+            <p>
               Outside of work, I enjoy team sports 🏀 ⚽ 🏈 and music ˚♬ ﾟ.
               These hobbies keep me active, motivated, and creatively inspired.
               I’m passionate about developing my computer science skills, with a

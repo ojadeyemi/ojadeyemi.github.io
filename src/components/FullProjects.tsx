@@ -19,6 +19,7 @@ const FullProjects: React.FC = () => {
             image={project.image}
             video={project.video}
             links={project.links}
+            active={project.active}
           />
         </BlurFade>
       ))}

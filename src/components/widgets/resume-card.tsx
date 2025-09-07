@@ -51,7 +51,14 @@ export const ResumeCard: React.FC<ResumeCardProps> = ({
     <Card className="flex">
       <div className="flex-none">
         <Avatar className="bg-muted-background m-auto size-12 border dark:bg-foreground">
-          <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
+          <AvatarImage
+            src={logoUrl}
+            alt={altText}
+            className={cn(
+              "object-contain",
+              title === "NorthScore" && "bg-black",
+            )}
+          />
           <AvatarFallback>{altText[0]}</AvatarFallback>
         </Avatar>
       </div>

@@ -6,14 +6,16 @@ import { DATA } from "@/data/resume";
 const Skills = () => {
   return (
     <section id="skills">
-      <div className="flex flex-col gap-y-3">
+      <div className="flex flex-col gap-y-2">
         <BlurFade delay={BLUR_FADE_DELAY * 10}>
           <h2 className="text-md font-bold">Skills</h2>
         </BlurFade>
         <div className="flex flex-wrap gap-1">
           {DATA.skills.map((skill, id) => (
             <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.3}>
-              <Badge key={skill}>{skill}</Badge>
+              <Badge className="text-xs" key={skill}>
+                {skill}
+              </Badge>
             </BlurFade>
           ))}
         </div>

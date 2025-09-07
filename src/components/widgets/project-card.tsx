@@ -27,6 +27,7 @@ interface Props {
   video?: string;
   links?: readonly ProjectLink[];
   className?: string;
+  active?: boolean;
 }
 
 export const ProjectCard: React.FC<Props> = ({
@@ -40,6 +41,7 @@ export const ProjectCard: React.FC<Props> = ({
   video,
   links,
   className,
+  active,
 }) => {
   return (
     <Card
@@ -71,7 +73,14 @@ export const ProjectCard: React.FC<Props> = ({
       </a>
       <CardHeader className="px-2">
         <div className="space-y-1">
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
+          <CardTitle className="mt-1 flex items-center justify-between text-base">
+            {title}
+            {active && (
+              <Badge variant="secondary" className="whitespace-nowrap">
+                In Progress
+              </Badge>
+            )}
+          </CardTitle>
           <time className="font-sans text-xs">{dates}</time>
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
