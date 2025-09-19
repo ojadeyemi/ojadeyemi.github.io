@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { buttonVariants } from "@/components/ui/button";
 import { Dock, DockIcon } from "@/components/ui/dock";
 import { Separator } from "@/components/ui/separator";
@@ -21,17 +23,38 @@ export default function Navbar() {
           <DockIcon key={item.href}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <a
-                  href={item.href}
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12",
-                  )}
-                  aria-label={item.label} // Accessible label derived from item data
-                  title={item.label}
-                >
-                  <item.icon className="size-4" />
-                </a>
+                {item.href.startsWith("http") ||
+                item.href.startsWith("/pdf/") ? (
+                  <a
+                    href={item.href}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12",
+                    )}
+                    aria-label={item.label}
+                    title={item.label}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      item.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                  >
+                    <item.icon className="size-4" />
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12",
+                    )}
+                    aria-label={item.label}
+                    title={item.label}
+                  >
+                    <item.icon className="size-4" />
+                  </Link>
+                )}
               </TooltipTrigger>
               <TooltipContent>
                 <p>{item.label}</p>
@@ -52,8 +75,10 @@ export default function Navbar() {
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12",
                     )}
-                    aria-label={social.name} // Accessible label derived from item data
+                    aria-label={social.name}
                     title={social.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <social.icon className="size-4" />
                   </a>

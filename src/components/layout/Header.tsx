@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import Image from "next/image";
+import { useState } from "react";
 
 import ThemeButton from "./ThemeButton";
 
@@ -22,10 +23,9 @@ const Header: React.FC = () => {
               onClick={() => rotateOrder()}
               aria-label="Next Image"
             >
-              <img
-                src={`/profilepics/profile${index + 1}.jpg`}
-                alt="profile"
-                rel="preload"
+              <Image
+                src={`/img/profilepics/profile${index + 1}.jpg`}
+                alt={`Profile photo ${index + 1}`}
                 className={
                   order.indexOf(index + 1) === 0
                     ? "absolute bottom-0 left-0 z-10 animate-to-front rounded-3xl no-drag"
@@ -37,6 +37,7 @@ const Header: React.FC = () => {
                 }
                 width={85}
                 height={85}
+                priority={order.indexOf(index + 1) === 0}
                 onContextMenu={(e) => e.preventDefault()}
               />
             </button>

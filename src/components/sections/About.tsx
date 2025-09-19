@@ -1,4 +1,4 @@
-import BlurFade from "@/components/ui/blur-fade";
+import { BlurFade } from "@/components/ui/blur-fade";
 import { BLUR_FADE_DELAY } from "@/constants/constant";
 
 const About = () => {
@@ -20,6 +20,7 @@ const About = () => {
                   className="inline underline transition duration-150 ease-in-out hover:text-purple-300 active:text-purple-600"
                   rel="noopener noreferrer"
                   target="_blank"
+                  aria-label="Read about Gen AI applications on AWS blog (opens in new tab)"
                 >
                   Gen AI applications
                 </a>
@@ -35,6 +36,7 @@ const About = () => {
                   className="inline underline transition duration-150 ease-in-out hover:text-purple-300 active:text-purple-600"
                   rel="noopener noreferrer"
                   target="_blank"
+                  aria-label="Read about 2025 NBA Team Innovation Award on NBA.com (opens in new tab)"
                 >
                   2025 NBA Team Innovation Award
                 </a>
@@ -48,6 +50,7 @@ const About = () => {
                   className="inline underline transition duration-150 ease-in-out hover:text-purple-300 active:text-purple-600"
                   rel="noopener noreferrer"
                   target="_blank"
+                  aria-label="Read about 2025 Sports Business Awards nomination (opens in new tab)"
                 >
                   2025 Sports Business Awards: Tech Best in AI, by Sports
                   Business Journal.

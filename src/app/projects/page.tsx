@@ -1,25 +1,21 @@
+"use client";
 import { Home } from "lucide-react";
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
-import FullProjects from "@/components/FullProjects";
-import ThemeButton from "@/components/ThemeButton";
-import BlurFade from "@/components/ui/blur-fade";
+import ThemeButton from "@/components/layout/ThemeButton";
+import FullProjects from "@/components/sections/FullProjects";
+import { BlurFade } from "@/components/ui/blur-fade";
 import { BLUR_FADE_DELAY } from "@/constants/constant";
 
-const ProjectPage: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
-
+export default function ProjectsPage() {
   return (
     <div className="mt-10 flex min-h-[100dvh] flex-col space-y-10 py-10 sm:mt-0">
       {/* Header Section */}
-      <BlurFade delay={BLUR_FADE_DELAY * 0.5}>
+      <BlurFade delay={BLUR_FADE_DELAY * 0.4}>
         <header className="flex items-center justify-between">
           {/* Home Link */}
           <Link
-            to="/"
+            href="/"
             className="flex items-center gap-2 text-base font-semibold text-primary transition hover:text-primary/60"
           >
             <Home className="h-3 w-3" />
@@ -51,6 +47,4 @@ const ProjectPage: React.FC = () => {
       </main>
     </div>
   );
-};
-
-export default ProjectPage;
+}

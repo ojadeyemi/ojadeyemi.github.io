@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import Markdown from "react-markdown";
 
 import { Badge } from "@/components/ui/badge";
@@ -49,28 +51,61 @@ export const ProjectCard: React.FC<Props> = ({
         "flex h-full flex-col overflow-hidden border transition-all duration-300 ease-out hover:shadow-lg"
       }
     >
-      <a href={href || "#"} className={cn("block cursor-pointer", className)}>
-        {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
-          />
-        )}
-        {image && (
-          <img
-            src={image}
-            alt={title}
-            width={500}
-            height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top no-drag"
-          />
-        )}
-      </a>
+      {href && href.startsWith("http") ? (
+        <a
+          href={href}
+          className={cn("block cursor-pointer", className)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {video && (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
+            />
+          )}
+          {image && (
+            <Image
+              src={image}
+              alt={title}
+              width={500}
+              height={300}
+              className="h-40 w-full overflow-hidden object-cover object-top no-drag"
+            />
+          )}
+        </a>
+      ) : (
+        <Link
+          href={href || "#"}
+          className={cn("block cursor-pointer", className)}
+        >
+          {video && (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
+            />
+          )}
+          {image && (
+            <Image
+              src={image}
+              alt={title}
+              width={500}
+              height={300}
+              className="h-40 w-full overflow-hidden object-cover object-top no-drag"
+            />
+          )}
+        </Link>
+      )}
       <CardHeader className="px-2">
         <div className="space-y-1">
           <CardTitle className="mt-1 flex items-center justify-between text-base">
@@ -114,6 +149,7 @@ export const ProjectCard: React.FC<Props> = ({
                 key={idx}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Open ${link.type} link for ${title}`}
               >
                 <Badge className="flex gap-2 px-2 py-1 text-[10px]">
                   {link.icon}

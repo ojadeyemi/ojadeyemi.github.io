@@ -1,7 +1,5 @@
-import React from "react";
-
-import { ProjectCard } from "./widgets/project-card";
-import BlurFade from "@/components/ui/blur-fade";
+import { BlurFade } from "@/components/ui/blur-fade";
+import { ProjectCard } from "@/components/widgets/project-card";
 import { BLUR_FADE_DELAY } from "@/constants/constant";
 import { DATA } from "@/data/resume";
 

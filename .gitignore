@@ -9,6 +9,10 @@ lerna-debug.log*
 
 node_modules
 
+.next
+out
+build
+
 dist
 dist-ssr
 .yarn/install-state.gz

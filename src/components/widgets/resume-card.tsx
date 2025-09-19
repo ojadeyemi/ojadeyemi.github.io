@@ -1,7 +1,8 @@
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
-import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
-import React from "react";
+import { motion } from "motion/react";
+import Link from "next/link";
+import { useState } from "react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -29,13 +30,17 @@ export const ResumeCard: React.FC<ResumeCardProps> = ({
   period,
   description,
 }) => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleTitleClick = () => {
     if (description) {
       setIsExpanded(!isExpanded);
     } else if (href) {
-      window.open(href, "_self");
+      if (href.startsWith("http")) {
+        window.open(href, "_blank");
+      } else if (typeof window !== "undefined") {
+        window.location.href = href;
+      }
     }
   };
 
@@ -43,7 +48,11 @@ export const ResumeCard: React.FC<ResumeCardProps> = ({
     if (description) {
       setIsExpanded(!isExpanded);
     } else if (href) {
-      window.open(href, "_blank");
+      if (href.startsWith("http")) {
+        window.open(href, "_blank");
+      } else if (typeof window !== "undefined") {
+        window.location.href = href;
+      }
     }
   };
 
@@ -110,15 +119,27 @@ export const ResumeCard: React.FC<ResumeCardProps> = ({
             }}
             className="mt-2 flex items-center text-xs sm:text-sm"
           >
-            <a
-              href={href || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-1 inline-flex items-center"
-            >
-              <span>{description}</span>
-              <ExternalLinkIcon className="mx-1 h-3 w-3" />
-            </a>
+            {href && href.startsWith("http") ? (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-1 inline-flex items-center"
+                aria-label={`Open ${title} website`}
+              >
+                <span>{description}</span>
+                <ExternalLinkIcon className="mx-1 h-3 w-3" />
+              </a>
+            ) : (
+              <Link
+                href={href || "#"}
+                className="ml-1 inline-flex items-center"
+                aria-label={`View ${title} details`}
+              >
+                <span>{description}</span>
+                <ExternalLinkIcon className="mx-1 h-3 w-3" />
+              </Link>
+            )}
           </motion.div>
         )}
       </div>

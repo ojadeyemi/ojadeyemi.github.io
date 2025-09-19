@@ -1,7 +1,7 @@
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
-import BlurFade from "@/components/ui/blur-fade";
+import { BlurFade } from "@/components/ui/blur-fade";
 import { BLUR_FADE_DELAY } from "@/constants/constant";
 import { DATA } from "@/data/resume";
 
@@ -57,7 +57,7 @@ export default function Projects() {
         </div>
         <>
           <Link
-            to="/projects"
+            href="/projects"
             className="ml-auto text-right text-[10px] font-medium text-blue-800 transition hover:text-purple-800 hover:underline focus:text-blue-800 active:text-purple-800"
           >
             See more...

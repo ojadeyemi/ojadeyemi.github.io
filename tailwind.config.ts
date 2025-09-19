@@ -134,7 +134,11 @@ const config = {
   plugins: [
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     require("tailwindcss-animate"),
-    function ({ addUtilities }) {
+    function ({
+      addUtilities,
+    }: {
+      addUtilities: (utilities: Record<string, Record<string, string>>) => void;
+    }) {
       addUtilities({
         ".no-drag": {
           "-webkit-user-drag": "none", // Disable drag on Webkit browsers

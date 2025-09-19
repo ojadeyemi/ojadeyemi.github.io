@@ -87,12 +87,100 @@ body {
   @apply w-5/6 py-6 sm:w-3/4 md:w-2/3 lg:w-2/5 2xl:w-1/3;
 }
 
-pre {
-  @apply overflow-x-auto rounded-lg !px-0 py-4;
+:root {
+  --sh-class: #7aa2f7;
+  --sh-sign: #89ddff;
+  --sh-string: #9ece6a;
+  --sh-keyword: #bb9af7;
+  --sh-comment: #565f89;
+  --sh-jsxliterals: #7aa2f7;
+  --sh-property: #73daca;
+  --sh-entity: #e0af68;
 }
 
-pre [data-line] {
-  @apply px-4;
+html {
+  min-width: 360px;
+  scrollbar-gutter: stable;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+pre {
+  background-color: #16161e;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  line-height: 1;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+code {
+  font-family: "Menlo", "Monaco", "Courier New", monospace;
+  font-size: 14px;
+  padding: 0.2em 0.4em;
+  border-radius: 0.3em;
+  background-color: hsl(var(--muted));
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+pre code > span .sh__token--identifier {
+  color: white !important;
+}
+
+code:not(pre code) span {
+  font-weight: 500;
+  color: hsl(var(--foreground)) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  code {
+    background-color: hsl(var(--muted));
+  }
+
+  code:not(pre code) span {
+    color: hsl(var(--foreground)) !important;
+  }
+}
+
+pre code span {
+  font-weight: 500;
+}
+
+hr {
+  color: hsl(var(--border));
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: left;
 }
 
 .svg-icon {

@@ -1,10 +1,13 @@
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import React from "react";
+import { forwardRef } from "react";
 
-import { useTheme } from "../contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/contexts/ThemeContext";
 
-const ThemeButton = React.forwardRef<HTMLButtonElement>((props, ref) => {
+const ThemeButton = forwardRef<
+  HTMLButtonElement,
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+>((props, ref) => {
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {

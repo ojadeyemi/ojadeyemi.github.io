@@ -1,3 +1,5 @@
+"use client";
+
 // External imports
 import {
   ReactNode,
@@ -8,10 +10,10 @@ import {
 } from "react";
 
 // Theme constants
-export const LIGHT = "light";
-export const DARK = "dark";
+const _LIGHT = "light";
+const _DARK = "dark";
 
-type ThemeType = typeof LIGHT | typeof DARK;
+type ThemeType = typeof _LIGHT | typeof _DARK;
 
 interface ThemeProviderProps {
   children: ReactNode;
@@ -25,16 +27,26 @@ interface ThemeContextProps {
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState<ThemeType>(() => {
-    const savedTheme = localStorage.getItem("theme");
-    return (savedTheme as ThemeType) || DARK;
-  });
+  const [theme, setTheme] = useState<ThemeType>(_DARK);
+  const [mounted, setMounted] = useState(false);
+
+  // Initialize theme from localStorage after mounting
+  useEffect(() => {
+    setMounted(true);
+    const savedTheme =
+      typeof window !== "undefined" ? localStorage.getItem("theme") : null;
+    if (savedTheme) {
+      setTheme(savedTheme as ThemeType);
+    }
+  }, []);
 
   // Update document attribute and localStorage when theme changes
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    if (mounted && typeof window !== "undefined") {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    }
+  }, [theme, mounted]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -44,7 +56,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 };
 
 // Custom hook to use theme context
-// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
