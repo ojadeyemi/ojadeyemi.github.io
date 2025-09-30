@@ -20,11 +20,8 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Set pnpm version to 10.17.0
-        run: corepack prepare pnpm@10.17.0 --activate
+      - name: Install pnpm
+        run: npm install -g pnpm@latest-10
 
       - name: Verify pnpm Version
         run: pnpm --version
