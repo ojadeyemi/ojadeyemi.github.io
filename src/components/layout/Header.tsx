@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
+import ShareButton from "./ShareButton";
 import ThemeButton from "./ThemeButton";
 
 const NO_OF_PHOTOS = 9;
@@ -47,10 +48,11 @@ const Header: React.FC = () => {
           <span className="scroll-m-20 text-lg font-semibold tracking-tight">
             OJ Adeyemi
           </span>
-          <div className="flex items-center">
-            <span className="mx-1 text-xs md:text-sm">
+          <div className="flex items-center gap-x-1">
+            <span className="text-xs md:text-sm">
               Studying computer science
             </span>
+            <ShareButton />
             <ThemeButton />
           </div>
         </div>

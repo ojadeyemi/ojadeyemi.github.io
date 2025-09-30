@@ -40,6 +40,18 @@ const About = () => {
                 >
                   2025 NBA Team Innovation Award
                 </a>
+              </strong>{" "}
+              and{" "}
+              <strong>
+                <a
+                  href="https://event.foundryco.com/cio-awards-canada/awards-2025/#:~:text=Maple%20Leaf%20Sports%20and%20Entertainment"
+                  className="inline underline transition duration-150 ease-in-out hover:text-purple-300 active:text-purple-600"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Read about 2025 CIO Awards Canada winners (opens in new tab)"
+                >
+                  2025 CIO Award
+                </a>
               </strong>
               , I contributed to multiple AI-driven advancements in the sports
               industry. One of these applications was also nominated for the

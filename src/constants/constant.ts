@@ -1,1 +1,1 @@
-export const BLUR_FADE_DELAY = 0.08;
+export const BLUR_FADE_DELAY = 0.05;

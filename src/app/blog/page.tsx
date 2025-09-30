@@ -1,3 +1,4 @@
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 import type { Metadata } from "next";
@@ -16,11 +17,16 @@ export default async function BlogPage() {
   return (
     <main className="flex min-h-[100dvh] flex-col space-y-10 py-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Blog</h1>
-        <p className="max-w-2xl text-muted-foreground">
-          Technical articles and insights on software engineering, data
-          analysis, and development.
-        </p>
+        <div>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </Link>
+        </div>
+        <h1 className="text-3xl font-bold tracking-tight">Blogs</h1>
       </div>
 
       <div className="space-y-6">

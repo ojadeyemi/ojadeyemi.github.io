@@ -13,18 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: "22"
+          node-version: "24"
 
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Set pnpm version to 9.15.1
-        run: corepack prepare pnpm@9.15.1 --activate
+      - name: Set pnpm version to 10.17.0
+        run: corepack prepare pnpm@10.17.0 --activate
 
       - name: Verify pnpm Version
         run: pnpm --version
@@ -44,4 +44,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./dist
+          publish_dir: ./out # Next.js static export output directory

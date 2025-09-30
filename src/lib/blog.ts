@@ -55,8 +55,8 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
     );
 }
 
-// External articles data
-export function getExternalArticles(): BlogPost[] {
+/**  External articles data */
+function getExternalArticles(): BlogPost[] {
   return [
     {
       slug: "usports-basketball-efficiency",

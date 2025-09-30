@@ -65,7 +65,6 @@ export const ProjectCard: React.FC<Props> = ({
               loop
               muted
               playsInline
-              preload="auto"
               className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
             />
           )}
@@ -91,7 +90,6 @@ export const ProjectCard: React.FC<Props> = ({
               loop
               muted
               playsInline
-              preload="auto"
               className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
             />
           )}

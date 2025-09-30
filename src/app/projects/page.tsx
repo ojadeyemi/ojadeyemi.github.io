@@ -11,7 +11,7 @@ export default function ProjectsPage() {
   return (
     <div className="mt-10 flex min-h-[100dvh] flex-col space-y-10 py-10 sm:mt-0">
       {/* Header Section */}
-      <BlurFade delay={BLUR_FADE_DELAY * 0.4}>
+      <BlurFade delay={BLUR_FADE_DELAY * 0.3}>
         <header className="flex items-center justify-between">
           {/* Home Link */}
           <Link
