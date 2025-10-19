@@ -1,12 +1,10 @@
 // Service Worker Version
-const SERVICE_WORKER_VERSION = 1;
+const SERVICE_WORKER_VERSION = 1.0;
 const CACHE_NAME = `portfolio-cache-v${SERVICE_WORKER_VERSION}`;
 
 // Static files and routes to cache
 const STATIC_FILES_TO_CACHE = [
   "/",
-  "/blog/",
-  "/blog/exploring-mdx-features/",
   "/offline.html",
   "/site.webmanifest",
   "/favicon.ico",

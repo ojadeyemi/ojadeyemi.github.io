@@ -11,29 +11,37 @@ export const DATA = {
   summary:
     "Hello! I'm currently a computer science student located in Toronto. I'm currently working at MLSE as an Engineer, where I've been able to build  [Gen AI applications](https://aws.amazon.com/blogs/media/maple-leaf-sports-entertainment-debuts-generative-ai-video-editor-to-deliver-content-to-fans-faster/) for the Toronto Raptors, Maple Leafs, TFC, Argos and associated fans.",
   skills: [
+    // Languages
     "Python",
-    "FastAPI",
-    "Langgraph",
     "Java",
     "C",
-    "HTML",
-    "CSS/TailwindCSS",
     "JavaScript",
-    "Typescript",
-    "React",
-    "Next.js",
-    "Node.js",
+    "TypeScript",
+    "HTML5",
+    "CSS/TailwindCSS",
     "SQL",
-    "NoSQL",
+    "Bash/Unix Shell",
+
+    // Frameworks / Libraries
+    "FastAPI",
+    "React.js",
+    "Next.js",
+    "LangGraph",
+    "Express.js",
+    "Spring Boot",
+
+    // Databases / Data
+    "Redis",
+
+    // DevOps / Cloud / Tools
     "Git",
-    "Unix Shell",
-    "Supabase",
+    "GitHub Actions",
     "Docker",
     "Kubernetes",
-    "Helm",
     "AWS",
     "Google Cloud",
   ],
+
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/projects", icon: FolderSearch, label: "Projects" },
@@ -70,11 +78,11 @@ export const DATA = {
       company: "NorthScore",
       badges: [],
       href: "https://www.northscore.ca/",
-      title: "Founder & Chief Technology Officer",
+      title: "Founder",
       logoUrl: "/img/northscore.png",
       start: "Aug 2025",
       end: "Present",
-      description: "Building Canada's sports data platform.",
+      description: "The home of Canadian sports",
     },
     {
       company: "Maple Leaf Sports & Entertainment",
