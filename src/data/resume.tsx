@@ -75,12 +75,12 @@ export const DATA = {
   },
   work: [
     {
-      company: "NorthScore",
+      company: "Northscore",
       badges: [],
       href: "https://www.northscore.ca/",
       title: "Founder",
       logoUrl: "/img/northscore.png",
-      start: "Aug 2025",
+      start: "Jan 2026",
       end: "Present",
       description: "The home of Canadian sports",
     },
@@ -239,7 +239,7 @@ export const DATA = {
       video: "/video/graphs_slideshow.mp4",
     },
     {
-      title: "MLSE SPL Open Data Challenge",
+      title: "MLSE SPL Open Data Challenge 2025",
       href: "https://github.com/ojadeyemi/mlse-spl-open-data-challenge/blob/main/README.md",
       dates: "Sept 2024 - Nov 2024",
       active: false,

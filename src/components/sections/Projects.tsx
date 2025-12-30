@@ -8,7 +8,7 @@ import { DATA } from "@/data/resume";
 export default function Projects() {
   const topProjects = DATA.projects.slice(0, 2);
   const mlseProject = DATA.projects.find(
-    (p) => p.title === "MLSE SPL Open Data Challenge",
+    (p) => p.title === "MLSE SPL Open Data Challenge 2025",
   );
   const mplProject = DATA.projects.find((p) => p.title === "mpl-basketball");
 
