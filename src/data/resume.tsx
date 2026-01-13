@@ -1,4 +1,4 @@
-import { FolderSearch, HomeIcon, NotebookText, PenTool } from "lucide-react";
+import { HomeIcon, NotebookText, PenTool } from "lucide-react";
 
 import { Icons } from "@/components/ui/icons";
 
@@ -44,7 +44,6 @@ export const DATA = {
 
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/projects", icon: FolderSearch, label: "Projects" },
     { href: "/blog", icon: PenTool, label: "Blog" },
     { href: "/pdf/resume.pdf", icon: NotebookText, label: "Resume" },
   ],

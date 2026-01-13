@@ -11,7 +11,7 @@ export interface BlogPost {
 }
 
 // Manually maintain list of blog slugs for static export
-const BLOG_SLUGS: string[] = ["sample-post"];
+const BLOG_SLUGS: string[] = ["northscore-system-design", "sample-post"];
 
 export function getAllSlugs(): string[] {
   return BLOG_SLUGS;
@@ -53,45 +53,4 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
       (a, b) =>
         new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime(),
     );
-}
-
-/**  External articles data */
-function getExternalArticles(): BlogPost[] {
-  return [
-    {
-      slug: "usports-basketball-efficiency",
-      title: "USports Basketball Efficiency Landscape",
-      description:
-        "Data visualization and storytelling with basketball analytics",
-      publishDate: "2024-03-15",
-      tags: ["Data Visualization", "Sports Analytics", "Basketball"],
-      thumbnail: "/img/usportsmbb_efficiency_landscape.png",
-      isExternal: true,
-      externalUrl:
-        "https://www.linkedin.com/pulse/data-visualization-storytelling-my-data-driven-canada-oj-adeyemi-nyqcf/",
-    },
-    {
-      slug: "usports-basketball-programs",
-      title: "Most Successful USports Basketball Programs",
-      description:
-        "Discovering the most successful U Sports basketball programs through data analysis",
-      publishDate: "2024-02-20",
-      tags: ["Data Analysis", "Sports", "University Sports"],
-      thumbnail: "/img/usportswbb_bestprogram.png",
-      isExternal: true,
-      externalUrl:
-        "https://www.linkedin.com/pulse/unveiling-dominance-discovering-most-successful-u-sports-oj-adeyemi-7doic/",
-    },
-  ];
-}
-
-// Get all content (blogs + external articles) combined
-export async function getAllContent(): Promise<BlogPost[]> {
-  const blogPosts = await getAllBlogPosts();
-  const externalArticles = getExternalArticles();
-
-  return [...blogPosts, ...externalArticles].sort(
-    (a, b) =>
-      new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime(),
-  );
 }

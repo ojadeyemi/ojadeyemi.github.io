@@ -1,0 +1,445 @@
+import Image from "next/image";
+
+export const metadata = {
+  title: "Building Northscore: A Scalable Sports Data Platform",
+  description:
+    "A scalable, serverless sports data platform delivering live Canadian sports data and aggregated media from a single codebase.",
+  publishDate: "2026-01-03",
+  tags: ["System Design", "PWA", "FastAPI", "Architecture", "Serverless"],
+  readTime: "4 min read",
+  thumbnail: "/img/northscore-screenshots-grid.png",
+};
+
+<FadeIn>
+
+# Building Northscore: A Scalable Sports Data Platform
+
+_Fast, reliable sports data for Canadian leagues_
+
+</FadeIn>
+
+<SlideIn delay={0.2}>
+
+Northscore is a Progressive Web App delivering live Canadian sports data and aggregated media — fast, reliable, and available on any device from a single frontend codebase.
+
+</SlideIn>
+
+---
+
+## Hero — Product in Motion
+
+<FadeIn delay={0.3}>
+
+<VideoDialog
+  videoId="u5Q8aHlVWss"
+  title="Northscore Progressive Web App — Product Demo and System Architecture Overview"
+  description="Click to watch the full product demo"
+/>
+
+</FadeIn>
+
+---
+
+## Product Experience
+
+<SlideIn delay={0.2}>
+
+<Image
+  src="/img/northscore-screenshots-grid.png"
+  alt="Northscore App Screenshots"
+  width={1200}
+  height={800}
+  className="my-6 rounded-lg"
+/>
+
+</SlideIn>
+
+<StaggerChildren>
+
+<StaggerItem>
+
+**Live stats, standings, schedules**
+Users always see current information across Canadian leagues.
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Aggregated content (read, watch, listen)**
+Articles, podcasts, and YouTube videos indexed in one place.
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Installable on any device**
+Works on iOS, Android, desktop, and Meta Quest without app stores.
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Automated push notifications**
+Fans get updates only for teams and games they follow.
+
+</StaggerItem>
+
+</StaggerChildren>
+
+<InfoAside>
+
+This section anchors everything in user value — the "why" before the "how."
+
+</InfoAside>
+
+---
+
+## Platform Architecture
+
+<FadeIn delay={0.2}>
+
+<Image
+  src="/img/northscore-architecture.png"
+  alt="Northscore System Architecture"
+  width={1200}
+  height={800}
+  className="my-6 rounded-lg"
+/>
+
+</FadeIn>
+
+<StaggerChildren>
+
+<StaggerItem>
+
+**Frontend — Next.js PWA (serverless, edge CDN)**
+Instant rendering, global distribution, zero cold starts.
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Backend — Stateless FastAPI containers (auto-scaling)**
+Horizontal scaling by default. No session state.
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Data — PostgreSQL, Redis, SQLite**
+Structured storage, fast reads, league isolation.
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Services — Managed auth backend, CI/CD, observability**
+Passwordless auth, automated deployments, real-time monitoring.
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Ingestion — API wrappers, scrapers, normalization**
+All leagues map to a shared schema. Safe fallbacks everywhere.
+
+</StaggerItem>
+
+</StaggerChildren>
+
+<SuccessAside>
+
+**Key Principle:** One diagram replaces multiple explanations. League-agnostic design means the same endpoints work for every league.
+
+</SuccessAside>
+
+---
+
+## One Codebase, Every Device
+
+<FadeIn delay={0.2}>
+
+The frontend runs from a single Next.js codebase.
+No separate iOS, Android, or web apps.
+
+</FadeIn>
+
+<InfoAside title="Why PWA over native apps?">
+
+**One frontend codebase vs 3+ native apps**
+
+- Faster shipping and iteration
+- No app store approval delays
+- Instant updates for all users
+- Works on iOS, Android, desktop, and **Meta Quest**
+
+Same code runs everywhere → keeps development fast and maintenance low.
+
+</InfoAside>
+
+---
+
+## Backend & Data Flow
+
+<SlideIn delay={0.2}>
+
+Two APIs power the platform:
+
+- **Stats API (FastAPI containers)** — Serves standings, teams, players, game data
+- **Content API (Headless CMS)** — Serves articles, podcasts, YouTube videos
+
+</SlideIn>
+
+<StaggerChildren>
+
+<StaggerItem>
+
+**Data ingestion strategies:**
+
+- Scraping for some leagues
+- Official external APIs for others
+- Custom SDK wrappers (e.g., [CFL API SDK](https://github.com/ojadeyemi/cfl-sdk))
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Unified, normalized schema**
+All leagues map to the same data model. Same endpoints work regardless of league.
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Safe fallback behavior**
+Failed updates don't break the app. Last known good data is served.
+
+</StaggerItem>
+
+</StaggerChildren>
+
+<WarningAside title="Technical Challenge Solved">
+
+**Limited data access** → Implemented custom SDKs with full documentation.
+Built entire data infrastructure for HoopQueens league.
+
+</WarningAside>
+
+---
+
+## Content Aggregation
+
+<FadeIn delay={0.2}>
+
+Content is indexed, not created.
+
+- YouTube channels are monitored automatically
+- Latest videos are fetched and normalized
+- Content appears alongside stats
+- Personalized based on followed teams, preferences, and behavior
+
+</FadeIn>
+
+<SuccessAside>
+
+This enables _watch, read, listen_ in one place — beyond raw stats.
+
+</SuccessAside>
+
+---
+
+## Request → Response Flow
+
+<SlideIn delay={0.2}>
+
+<Image
+  src="/img/northscore-request-flow.png"
+  alt="Request Flow Diagram"
+  width={1200}
+  height={600}
+  className="my-6 rounded-lg"
+/>
+
+</SlideIn>
+
+<StaggerChildren>
+
+<StaggerItem>
+
+1. User opens the app
+
+</StaggerItem>
+
+<StaggerItem>
+
+2. CDN serves the PWA shell
+
+</StaggerItem>
+
+<StaggerItem>
+
+3. API request checks Redis cache
+
+</StaggerItem>
+
+<StaggerItem>
+
+4. Cache miss queries the database
+
+</StaggerItem>
+
+<StaggerItem>
+
+5. Normalized response is returned
+
+</StaggerItem>
+
+<StaggerItem>
+
+6. UI updates instantly
+
+</StaggerItem>
+
+</StaggerChildren>
+
+<InfoAside>
+
+**Performance Metrics:**
+
+- Stats API p90 latency **< 100ms**
+- Cache-first architecture keeps response times low under load
+
+</InfoAside>
+
+_A cache-first read path keeps latency low under traffic spikes._
+
+```python
+@app.get("/teams/{team_id}")
+async def get_team(team_id: str):
+    if cached := redis.get(team_id):
+        return cached
+
+    team = db.fetch_team(team_id)
+    redis.set(team_id, team, ex=300)
+    return team
+```
+
+<SuccessAside>
+
+The code proves the diagram is real — not theoretical.
+
+</SuccessAside>
+
+---
+
+## Auth, Personalization & Notifications
+
+<FadeIn delay={0.2}>
+
+**Passwordless authentication** (Google, Microsoft, email OTP)
+Modern security model — no passwords stored.
+
+</FadeIn>
+
+<StaggerChildren>
+
+<StaggerItem>
+
+Managed auth backend handles:
+
+- User accounts
+- Favorites / followed teams
+- Notification preferences
+- Upcoming games tracking
+
+</StaggerItem>
+
+<StaggerItem>
+
+Automated push notifications triggered by game data
+
+</StaggerItem>
+
+</StaggerChildren>
+
+<WarningAside title="Technical Challenge Solved">
+
+**Streamlined onboarding flow:** install app → signup → enable notifications.
+Designed logic to minimize friction while ensuring proper permissions.
+
+</WarningAside>
+
+<InfoAside>
+
+**Separation of concerns:** Auth backend handles user state — not core stats.
+
+</InfoAside>
+
+---
+
+## Reliability, DevOps & Scale
+
+<FadeIn delay={0.2}>
+
+**Serverless & stateless services** — Horizontal scaling by default
+
+</FadeIn>
+
+<StaggerChildren>
+
+<StaggerItem>
+
+**Automated CI/CD pipeline:**
+
+- Every commit is linted, formatted, and tested
+- Failed deployments never take over (rollback automatic)
+- Deploys to separate branch for review before production
+- Follows proper Git flow across all repos
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Safe deployments** — Only verified builds reach production
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Auto-healing** — Services restart/redeploy without downtime
+
+</StaggerItem>
+
+<StaggerItem>
+
+**Observability** — Logs, traces, Slack alerts for failures
+
+</StaggerItem>
+
+</StaggerChildren>
+
+<SuccessAside>
+
+**Performance & Reliability:**
+
+- **99.999% uptime** since launch
+- Zero-downtime deployments with automatic rollback
+
+</SuccessAside>
+
+<InfoAside>
+
+Infrastructure stays invisible to users — reliability without complexity.
+
+</InfoAside>
+
+---
+
+## Closing
+
+<FadeIn delay={0.3}>
+
+> Northscore isn't built to look scalable.
+> It's built to stay simple as it scales.
+
+</FadeIn>

@@ -1,50 +1,283 @@
+import Image from "next/image";
+
 export const metadata = {
-  title: "Exploring MDX Features",
+  title: "Building Interactive Blog Posts with Modern Web Tech",
   description:
-    "A demonstration of the capabilities of MDX for creating rich content.",
-  publishDate: "2025-10-2",
-  tags: ["MDX", "Next.js", "React", "Web Development"],
-  readTime: "4 min read",
+    "A demonstration of animations, interactive components, and visual callouts for creating engaging technical content.",
+  publishDate: "2026-01-03",
+  tags: ["MDX", "Next.js", "React", "Motion", "Web Development"],
+  readTime: "5 min read",
   thumbnail: "/img/sample-thumbnail.png",
 };
 
-# Exploring the Power of MDX
+<FadeIn>
 
-MDX allows you to seamlessly blend Markdown with React components, opening up a world of possibilities for creating dynamic and interactive content. This post serves as a demonstration of some of the key features you can use.
+# Building Interactive Blog Posts with Modern Web Tech
 
-## Rich Text and Components
+</FadeIn>
 
-MDX supports standard Markdown syntax for formatting text, like **bold**, _italics_, and `inline code`. You can also embed React components directly into your content, like this custom button:
+<SlideIn delay={0.2}>
 
-{/* Note: You would need to have a Button component available to mdx-components.tsx for this to render */}
-{/* <Button>Click Me!</Button> */}
+In this post, I'll show you how to create engaging technical content using **animations**, **visual callouts**, and **interactive components**. This setup is perfect for explaining complex system designs, data infrastructure, and AI agents to both technical and non-technical audiences.
 
-This demonstrates the power of combining markdown with interactive elements.
+</SlideIn>
 
-## Code Blocks with Syntax Highlighting
+---
 
-Displaying code is a common need, and MDX handles it beautifully with syntax highlighting. Here’s an example of a JavaScript function:
+## Animations Make Content Come Alive
 
-```javascript
-// A simple function to greet a user
-function greet(name) {
-  return `Hello, ${name}!`;
+<FadeIn delay={0.3}>
+
+Animations help guide readers through your content step-by-step. They draw attention to important sections and create a sense of progression.
+
+</FadeIn>
+
+<InfoAside title="For Non-Technical Readers">
+
+Think of animations like **transitions in a presentation** — they help your eyes follow along and make it easier to absorb information.
+
+</InfoAside>
+
+---
+
+## Visual Callouts for Key Information
+
+Use callout boxes to highlight important tips, warnings, and insights throughout your posts.
+
+<InfoAside>
+
+**💡 Info Callout:** Use this for helpful tips, analogies, and explanations that make complex concepts accessible.
+
+</InfoAside>
+
+<WarningAside title="Performance Tip">
+
+**⚠️ Warning Callout:** Always index your foreign keys in databases! I learned this the hard way when queries took 30+ seconds.
+
+</WarningAside>
+
+<SuccessAside>
+
+**✓ Success Callout:** This approach reduced my API response time from **12 seconds → 3 seconds** by parallelizing database calls.
+
+</SuccessAside>
+
+<ErrorAside title="Common Mistake">
+
+**✗ Error Callout:** Don't put your database in the same container as your API. This breaks when you need to scale horizontally.
+
+</ErrorAside>
+
+---
+
+## Code Examples with Copy Button
+
+All code blocks now have a **copy button** in the top-right corner. Try it out:
+
+```typescript
+// Example: Animated component in MDX
+import { motion } from "motion/react";
+
+export function AnimatedCard() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <h2>Hello, World!</h2>
+    </motion.div>
+  );
 }
-
-console.log(greet("World"));
 ```
 
-And here is some Python code:
+Here's a Python example for data processing:
 
 ```python
-# A simple python script to print numbers
-for i in range(5):
-    print(f"Number: {i}")
+# Example: Parallel data processing
+from concurrent.futures import ThreadPoolExecutor
+import pandas as pd
+
+def process_chunk(chunk):
+    # Transform data in parallel
+    return chunk.apply(lambda x: x.upper())
+
+with ThreadPoolExecutor(max_workers=4) as executor:
+    results = list(executor.map(process_chunk, data_chunks))
+
+final_df = pd.concat(results)
+print(f"Processed {len(final_df)} rows")
 ```
 
-## Data Tables
+---
 
-Creating tables is straightforward with Markdown syntax. Here is an example comparing different rendering methods. (using remark-gfm plugin for tables)
+## Staggered Animations for Lists
+
+<StaggerChildren>
+
+Use staggered animations to reveal content sequentially:
+
+<StaggerItem>
+
+### 1. Data Collection
+
+Scrape stats from USports using custom Python scripts
+
+</StaggerItem>
+
+<StaggerItem>
+
+### 2. ETL Pipeline
+
+Clean and transform data with Pandas and NumPy
+
+</StaggerItem>
+
+<StaggerItem>
+
+### 3. Database Storage
+
+Store processed data in PostgreSQL with proper indexing
+
+</StaggerItem>
+
+<StaggerItem>
+
+### 4. API Layer
+
+Serve data via FastAPI with Redis caching
+
+</StaggerItem>
+
+</StaggerChildren>
+
+---
+
+## Real-World Example: Basketball Analytics
+
+<SlideIn>
+
+Let me show you how I built the analytics infrastructure for professional basketball data.
+
+</SlideIn>
+
+<FadeIn delay={0.1}>
+
+<Image
+  src="/img/northscore.png"
+  alt="Basketball Analytics Dashboard"
+  width={800}
+  height={450}
+  className="rounded-lg"
+/>
+
+</FadeIn>
+
+<InfoAside title="Architecture Overview">
+
+Think of it like a **restaurant kitchen:**
+
+- **Data Collection** = Receiving fresh ingredients
+- **ETL Pipeline** = Prep station cleaning/chopping
+- **Database** = Walk-in cooler storing everything
+- **API** = Expo station plating and serving dishes
+
+Each station works independently, so if one breaks, the others keep running.
+
+</InfoAside>
+
+### The Tech Stack
+
+<FadeIn delay={0.2}>
+
+Here's what I used to build the system:
+
+- **Frontend:** Next.js 15 + React 19 + TailwindCSS
+- **Backend:** FastAPI + PostgreSQL + Redis
+- **Data Processing:** Python (Pandas, NumPy, Polars)
+- **Deployment:** Docker + Railway
+
+</FadeIn>
+
+### Live Demo: Data Visualization
+
+<FadeIn delay={0.3}>
+
+Here's a video showcasing the interactive graphs and real-time data updates:
+
+<video
+  src="/video/graphs_slideshow.mp4"
+  controls
+  autoPlay
+  muted
+  loop
+  playsInline
+  width="100%"
+  className="my-4 rounded-lg"
+  aria-label="Interactive data visualization graphs slideshow demonstration"
+>
+  Your browser does not support the video tag.
+</video>
+
+</FadeIn>
+
+<WarningAside>
+
+**Lesson learned:** Always use connection pooling for database connections. Without it, my API crashed under load during game nights (peak traffic).
+
+</WarningAside>
+
+---
+
+## Performance Optimization Tips
+
+<SuccessAside title="Key Optimizations">
+
+Here's what made the biggest difference:
+
+1. **Redis caching** → Reduced API response time by 80%
+2. **Database indexing** → Query time dropped from 12s to 200ms
+3. **Parallel processing** → Cut ETL pipeline time in half
+4. **CDN for static assets** → Faster page loads worldwide
+
+</SuccessAside>
+
+### Analytics Results
+
+<SlideIn delay={0.2}>
+
+<div className="my-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+  <Image
+    src="/img/usportsmbb_efficiency_landscape.png"
+    alt="Player Efficiency Ratings"
+    width={400}
+    height={300}
+    className="rounded-lg"
+  />
+  <Image
+    src="/img/usportswbb_bestprogram.png"
+    alt="Best Programs Analysis"
+    width={400}
+    height={300}
+    className="rounded-lg"
+  />
+</div>
+
+</SlideIn>
+
+```sql
+-- Example: Adding indexes for performance
+CREATE INDEX idx_player_stats_season ON player_stats(season, player_id);
+CREATE INDEX idx_team_games_date ON team_games(game_date DESC);
+
+-- This single change reduced query time from 12s → 0.2s
+```
+
+---
+
+## Tables and Data Visualization
+
+Here's a comparison of different rendering methods:
 
 | Rendering Method    | Pros                  | Cons                                |
 | ------------------- | --------------------- | ----------------------------------- |
@@ -52,34 +285,77 @@ Creating tables is straightforward with Markdown syntax. Here is an example comp
 | **Server-Side**     | Dynamic, Good for SEO | Slower, Higher server load          |
 | **Client-Side**     | Interactive, Rich UX  | SEO challenges, Slower initial load |
 
-## Collapsible FAQ Section
+---
 
-You can use the `<details>` element to create a list of collapsible items, which is great for an FAQ section.
+## Interactive FAQ Section
 
 <details>
-  <summary>What is MDX?</summary>
-  <div>
-    MDX is a format that lets you write JSX in your Markdown documents. It’s a
-    great way to add dynamic and interactive components to your content.
+  <summary>Why use Motion instead of Framer Motion?</summary>
+  <div className="p-4">
+    **Motion** is the new independent version of Framer Motion. It's:
+
+    - **Smaller bundle** (2.3kb vs 34kb)
+    - **Better tree-shaking**
+    - **Same great API**
+    - **React 19 compatible**
+
   </div>
 </details>
 
 <details>
-  <summary>How do I add a new post?</summary>
-  <div>
-    You can add a new post by creating a new `.mdx` file in the
-    `src/content/blog` directory. The framework will automatically detect it.
+  <summary>How do I add animations to my blog?</summary>
+  <div className="p-4">
+    Just wrap your content in animation components:
+
+    ```mdx
+    <FadeIn>
+      Your content here
+    </FadeIn>
+    ```
+
+    Available components: `FadeIn`, `SlideIn`, `StaggerChildren`, `StaggerItem`
+
   </div>
 </details>
 
 <details>
-  <summary>Can I use React components?</summary>
-  <div>
-    Yes! That is the main advantage of MDX. You can import and use your own
-    React components directly in the file.
+  <summary>Can I use these components in any MDX blog?</summary>
+  <div className="p-4">
+    Yes! As long as you're using:
+
+    - Next.js 15+
+    - React 19+
+    - MDX 3
+    - Motion library installed
+
+    All components are fully type-safe and mobile-responsive.
+
   </div>
 </details>
+
+---
 
 ## Conclusion
 
-As you can see, MDX provides a flexible and powerful way to create content that goes beyond traditional Markdown. By combining the simplicity of Markdown with the power of React, you can build truly engaging and interactive experiences.
+<FadeIn>
+
+By combining **Motion animations**, **visual callouts**, and **interactive components**, you can transform technical blog posts from walls of text into engaging, accessible content.
+
+</FadeIn>
+
+<SuccessAside>
+
+**Next steps:**
+
+- Experiment with different animation timings
+- Customize aside colors for your brand
+- Add more interactive components as needed
+- Test on mobile devices for responsiveness
+
+</SuccessAside>
+
+<InfoAside>
+
+**Remember:** Keep animations subtle and purposeful. The goal is to enhance readability, not distract from your content.
+
+</InfoAside>
