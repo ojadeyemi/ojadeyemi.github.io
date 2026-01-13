@@ -1,9 +1,8 @@
-const SERVICE_WORKER_VERSION = 1.01;
+const SERVICE_WORKER_VERSION = 1.02;
 const CACHE_NAME = `portfolio-cache-v${SERVICE_WORKER_VERSION}`;
 
 // Static files and routes to cache
 const STATIC_FILES_TO_CACHE = [
-  "/",
   "/offline.html",
   "/site.webmanifest",
   "/favicon.ico",
@@ -75,8 +74,12 @@ const handleNavigationRequest = async (request) => {
 
     if (networkResponse && networkResponse.ok) {
       // Cache the successful response
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(request, networkResponse.clone());
+      // Don't cache the home page to ensure it's always fresh
+      const url = new URL(request.url);
+      if (url.pathname !== "/") {
+        const cache = await caches.open(CACHE_NAME);
+        cache.put(request, networkResponse.clone());
+      }
       return networkResponse;
     }
   } catch (networkError) {
