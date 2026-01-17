@@ -154,6 +154,13 @@ export const DATA = {
         "Spring Boot",
         "OpenLibrary API",
       ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/EECS3311F25/bookbuddy",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
       image: "",
       video: "/video/Book_Buddy_App_demo_v1.mp4",
     },
