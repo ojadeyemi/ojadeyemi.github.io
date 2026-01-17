@@ -1,4 +1,10 @@
-import { FolderSearch, HomeIcon, NotebookText, PenTool } from "lucide-react";
+import {
+  FolderSearch,
+  Globe,
+  HomeIcon,
+  NotebookText,
+  PenTool,
+} from "lucide-react";
 
 import { Icons } from "@/components/ui/icons";
 
@@ -116,6 +122,41 @@ export const DATA = {
     },
   ],
   projects: [
+    {
+      title: "OUSAC",
+      href: "https://www.ousac.ca/",
+      dates: "Jan 2025 - March 2025",
+      active: true,
+      description:
+        "Built the official website for OUSAC, a consortium of sports analytics clubs from Ontario universities.",
+      technologies: ["React", "Next.js", "TailwindCSS", "TypeScript"],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.ousac.ca/",
+          icon: <Globe className="size-3" />,
+        },
+      ],
+      image: "/img/ousac_website.png",
+      video: "",
+    },
+    {
+      title: "Book Buddy App",
+      href: "https://ojadeyemi.github.io/projects/",
+      dates: "Nov 2025 - Dec 2025",
+      active: false,
+      description:
+        "Reading tracker app allowing users to track reading goals, search for books, and write reviews.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Java",
+        "Spring Boot",
+        "OpenLibrary API",
+      ],
+      image: "",
+      video: "/video/Book_Buddy_App_demo_v1.mp4",
+    },
     {
       title: "cfl-sdk",
       href: "https://github.com/ojadeyemi/cfl-sdk",
