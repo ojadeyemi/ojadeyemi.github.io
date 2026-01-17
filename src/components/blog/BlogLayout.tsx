@@ -99,7 +99,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
 
         {/* Blog content */}
         <article
-          className="max-w-none space-y-6"
+          className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-semibold prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-a:font-normal prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:font-semibold prose-code:rounded prose-code:bg-zinc-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-pre:bg-[#16161e] dark:prose-a:text-blue-400 dark:prose-code:bg-zinc-800"
           id="blog-content"
           aria-label="Article content"
         >

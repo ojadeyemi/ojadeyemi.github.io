@@ -37,6 +37,13 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
       typeof window !== "undefined" ? localStorage.getItem("theme") : null;
     if (savedTheme) {
       setTheme(savedTheme as ThemeType);
+      // Set initial dark class
+      if (savedTheme === _DARK) {
+        document.documentElement.classList.add("dark");
+      }
+    } else {
+      // Default is dark, so add the class
+      document.documentElement.classList.add("dark");
     }
   }, []);
 
@@ -44,6 +51,12 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   useEffect(() => {
     if (mounted && typeof window !== "undefined") {
       document.documentElement.setAttribute("data-theme", theme);
+      // Add/remove dark class for Tailwind
+      if (theme === _DARK) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
       localStorage.setItem("theme", theme);
     }
   }, [theme, mounted]);
