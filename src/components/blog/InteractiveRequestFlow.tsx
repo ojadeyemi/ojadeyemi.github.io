@@ -2,6 +2,11 @@
 
 import { useState } from "react";
 
+const STEP_CIRCLE_SIZE = 40; // h-10 w-10 = 40px
+const ANIMATION_STEP_DELAY = 1000; // ms per step
+const INITIAL_DELAY = 300; // ms before animation starts
+const FINAL_DELAY = 800; // ms after animation ends
+
 const steps = [
   {
     id: 1,
@@ -17,21 +22,21 @@ const steps = [
   },
   {
     id: 3,
-    label: "Check Redis cache",
-    icon: "⚡",
-    description: "API request checks Redis for cached data",
+    label: "API request sent",
+    icon: "📡",
+    description: "Frontend requests data from the Stats API",
   },
   {
     id: 4,
-    label: "Query database",
-    icon: "🗄️",
-    description: "Cache miss triggers PostgreSQL query",
+    label: "Redis cache hit",
+    icon: "⚡",
+    description: "Data found in cache, no database query needed",
   },
   {
     id: 5,
-    label: "Normalize response",
+    label: "Response returned",
     icon: "📦",
-    description: "Data is normalized to unified schema",
+    description: "Normalized data sent back to the frontend",
   },
   {
     id: 6,
@@ -50,14 +55,14 @@ export function InteractiveRequestFlow() {
     setIsPlaying(true);
     setActiveStep(null);
 
-    await new Promise((resolve) => setTimeout(resolve, 300));
+    await new Promise((resolve) => setTimeout(resolve, INITIAL_DELAY));
 
     for (let i = 0; i < steps.length; i++) {
       setActiveStep(steps[i].id);
-      await new Promise((resolve) => setTimeout(resolve, 700));
+      await new Promise((resolve) => setTimeout(resolve, ANIMATION_STEP_DELAY));
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    await new Promise((resolve) => setTimeout(resolve, FINAL_DELAY));
     setActiveStep(null);
     setIsPlaying(false);
   };
@@ -85,18 +90,48 @@ export function InteractiveRequestFlow() {
       </div>
 
       <div className="relative pb-16 sm:pb-12">
-        {/* Progress line background */}
-        <div className="absolute left-5 top-5 h-[calc(100%-5rem)] w-0.5 bg-zinc-200 dark:bg-zinc-700 sm:left-0 sm:right-0 sm:top-5 sm:mx-auto sm:h-0.5 sm:w-[calc(100%-4rem)]" />
-
-        {/* Animated progress line */}
+        {/* Progress line background - anchored to first step's center */}
         <div
-          className="absolute left-5 top-5 h-[calc((100%_-_5rem)*var(--progress))] w-0.5 bg-blue-500 transition-all duration-500 ease-in-out dark:bg-blue-400 sm:left-0 sm:right-0 sm:top-5 sm:mx-auto sm:h-0.5 sm:w-[calc((100%_-_4rem)*var(--progress))]"
-          style={
-            {
-              "--progress": activeStep ? activeStep / steps.length : 0,
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            } as any
-          }
+          className="absolute bg-zinc-200 dark:bg-zinc-700"
+          style={{
+            // Mobile: vertical line on left
+            left: `${STEP_CIRCLE_SIZE / 2}px`,
+            top: `${STEP_CIRCLE_SIZE / 2}px`,
+            width: "2px",
+            height: "calc(100% - 5rem)",
+          }}
+        />
+        <div
+          className="absolute hidden bg-zinc-200 dark:bg-zinc-700 sm:block"
+          style={{
+            // Desktop: horizontal line from first to last step center
+            left: `${STEP_CIRCLE_SIZE / 2}px`,
+            top: `${STEP_CIRCLE_SIZE / 2}px`,
+            width: `calc(100% - ${STEP_CIRCLE_SIZE}px)`,
+            height: "2px",
+          }}
+        />
+
+        {/* Animated progress line - grows left to right */}
+        <div
+          className="absolute bg-blue-500 transition-all duration-500 ease-in-out dark:bg-blue-400"
+          style={{
+            // Mobile: vertical growth
+            left: `${STEP_CIRCLE_SIZE / 2}px`,
+            top: `${STEP_CIRCLE_SIZE / 2}px`,
+            width: "2px",
+            height: `calc((100% - 5rem) * ${activeStep ? activeStep / steps.length : 0})`,
+          }}
+        />
+        <div
+          className="absolute hidden bg-blue-500 transition-all duration-500 ease-in-out dark:bg-blue-400 sm:block"
+          style={{
+            // Desktop: horizontal growth left to right
+            left: `${STEP_CIRCLE_SIZE / 2}px`,
+            top: `${STEP_CIRCLE_SIZE / 2}px`,
+            width: `calc((100% - ${STEP_CIRCLE_SIZE}px) * ${activeStep ? activeStep / steps.length : 0})`,
+            height: "2px",
+          }}
         />
 
         {/* Steps */}
