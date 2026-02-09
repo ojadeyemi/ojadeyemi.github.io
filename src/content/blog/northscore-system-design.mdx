@@ -6,7 +6,7 @@ export const metadata = {
     "How I built a scalable sports data platform serving live stats across Canadian leagues from a single codebase.",
   publishDate: "2026-01-03",
   tags: ["System Design", "PWA", "FastAPI", "Architecture"],
-  readTime: "4 min read",
+  readTime: "6 min read",
   thumbnail: "/img/northscore-screenshots-grid.png",
 };
 
@@ -22,7 +22,7 @@ _A system design case study_
 
 There was no single place to follow Canadian sports. So I built one.
 
-**Northscore** is a Progressive Web App that delivers live stats, standings, and aggregated media across Canadian leagues — all from a single codebase.
+**[Northscore](https://www.northscore.ca/)** is a Progressive Web App that delivers live stats, standings, and aggregated media across Canadian leagues — all from a single codebase.
 
 </SlideIn>
 
@@ -38,9 +38,15 @@ There was no single place to follow Canadian sports. So I built one.
 
 ---
 
-## What It Does
+## The Product
 
 <SlideIn delay={0.2}>
+
+[**Northscore**](https://www.northscore.ca/) is a Progressive Web App that delivers live stats, standings, and aggregated media across 50+ Canadian leagues — including CFL, CEBL, CHL, CPL, USPORTS, CCAA, and individual sports like USports track and field. It runs on iOS, Android, desktop, and even Meta Quest without requiring app store approval.
+
+</SlideIn>
+
+<SlideIn delay={0.3}>
 
 <div className="not-prose my-8 grid grid-cols-2 gap-3">
   <Image
@@ -65,25 +71,25 @@ There was no single place to follow Canadian sports. So I built one.
 
 <StaggerItem>
 
-**Live stats & standings** — The app tracks real-time scores across the CFL, CEBL, CHL, CPL, and more. Game data updates automatically, so you're always seeing current standings and results.
+**Live stats & standings** — Game data updates automatically across 50+ leagues. You're always seeing current standings and results for professional, collegiate, and university sports.
 
 </StaggerItem>
 
 <StaggerItem>
 
-**Aggregated content** — Instead of jumping between websites and apps, Northscore indexes articles, podcasts, and YouTube videos from across Canadian sports media. Everything shows up in one feed.
+**Aggregated content** — Articles, podcasts, and YouTube videos from Canadian sports media show up in one feed. No need to jump between websites.
 
 </StaggerItem>
 
 <StaggerItem>
 
-**Installable anywhere** — It runs on iOS, Android, desktop, and even Meta Quest. There's no app store involved. You just install it from the browser, and it behaves like a native app.
+**Installable anywhere** — Install it from the browser on phones, tablets, iPads, MacBooks, desktops, and even VR headsets like Meta Quest. It behaves like a native app. No app store delays, no platform-specific builds.
 
 </StaggerItem>
 
 <StaggerItem>
 
-**Push notifications** — Users only get notifications for the teams they actually follow. No spam, no irrelevant alerts.
+**Push notifications** — Users can get push notifications when any of their favorite teams' games go live. Login to personalize content and add favorites. Keep up with your teams without checking manually.
 
 </StaggerItem>
 
@@ -121,9 +127,9 @@ The system is built in three layers. Each one scales independently.
 
 <StaggerItem>
 
-**Backend** — FastAPI containers run stateless. No session state, no sticky routing. When traffic spikes, containers scale horizontally. When traffic drops, they scale back down. I don't manage servers.
+**Backend** — Two stateless services: FastAPI handles stats requests, Node.js serves as a headless CMS and content API. No session state, no sticky routing. When traffic spikes, containers scale horizontally. When traffic drops, they scale back down. I don't manage servers.
 
-</StaggerItem>
+</StaggerItem></invoke>
 
 <StaggerItem>
 
@@ -133,7 +139,7 @@ The system is built in three layers. Each one scales independently.
 
 <StaggerItem>
 
-**Ingestion** — Custom scrapers and API wrappers pull data from various sources and normalize it into a unified schema. The frontend doesn't care whether data came from an official API or a web scraper — it's all the same shape by the time it arrives.
+**Ingestion** — Custom scrapers and API wrappers pull data from various sources and normalize it into a unified schema using the adapter pattern. Every league, whether it has an external API or requires scraping, maps to the same generic schema. The frontend doesn't care where data came from — it's all the same shape by the time it arrives.
 
 </StaggerItem>
 
@@ -141,7 +147,7 @@ The system is built in three layers. Each one scales independently.
 
 <InfoAside>
 
-Every league maps to the same data model. The frontend doesn't need to know where the data came from.
+Using the adapter pattern, every league maps to the same unified data model. The frontend doesn't need to know where the data came from — all 50+ leagues share the same schema.
 
 </InfoAside>
 
@@ -151,7 +157,7 @@ Every league maps to the same data model. The frontend doesn't need to know wher
 
 <FadeIn delay={0.2}>
 
-I chose a PWA over native apps for a simple reason: I'm one person.
+I chose a PWA over native apps for a simple reason: **I'm one person.**
 
 </FadeIn>
 
@@ -159,7 +165,7 @@ I chose a PWA over native apps for a simple reason: I'm one person.
 
 Building separate iOS, Android, and web apps would mean maintaining three codebases, fixing three sets of bugs, and managing three deployment pipelines. That's not realistic for a solo project.
 
-Instead, one Next.js app runs everywhere — phones, tablets, desktops, even VR headsets. There are no app store approval delays. Updates are instant for all users. The same code runs on every device.
+Instead, one Next.js app runs everywhere — phones, tablets, iPads, MacBooks, desktops, even VR headsets like Meta Quest. There are no app store approval delays. Updates are instant for all users. The same code runs on every device.
 
 </SlideIn>
 
@@ -169,7 +175,9 @@ Instead, one Next.js app runs everywhere — phones, tablets, desktops, even VR 
 
 <FadeIn delay={0.2}>
 
-<InteractiveRequestFlow />
+<div className="pb-0">
+  <InteractiveRequestFlow />
+</div>
 
 </FadeIn>
 
@@ -178,6 +186,10 @@ Instead, one Next.js app runs everywhere — phones, tablets, desktops, even VR 
 Most requests never hit the database. The system is cache-first, so response times stay low even when traffic spikes.
 
 When a user opens the app, the CDN serves the PWA shell. Then the app makes an API request. That request checks Redis first. If the data is cached, it's returned immediately. If there's a cache miss, the database gets queried, the response is normalized, and it's stored in Redis for the next request.
+
+Cache TTLs are dynamic — off-season leagues get longer TTLs since data isn't expected to change frequently. The system keeps track of each league's active season and adjusts cache duration accordingly.
+
+All timestamps from the backend are converted to UTC, allowing the frontend to display times in each user's local timezone. Canada spans six time zones, so handling this correctly ensures users always see accurate game times.
 
 This keeps the Stats API p90 latency under 100ms, even on game days when traffic is high.
 
@@ -208,27 +220,33 @@ Stats API p90 latency under 100ms. Even on game days.
 
 <FadeIn delay={0.2}>
 
-Canadian sports data is fragmented. Some leagues have APIs. Most don't.
+Canadian sports data is fragmented. Some leagues have external APIs. Most don't.
 
 </FadeIn>
+
+| League Source     | Approach                                              | Challenge                           |
+| ----------------- | ----------------------------------------------------- | ----------------------------------- |
+| **External APIs** | SDK wrappers with type hints, validation & pagination | Inconsistent schemas                |
+| **Web Scraping**  | Scheduled scrapers storing data in Postgres DB        | Markup changes, uptime issues       |
+| **No Data**       | AI-powered extraction from raw box scores             | Manual validation, schema inference |
 
 <StaggerChildren>
 
 <StaggerItem>
 
-**Leagues with APIs** — For leagues that provide official APIs, I built SDK wrappers with proper error handling, retries, and documentation. The [CFL SDK](https://github.com/ojadeyemi/cfl-sdk) is open source and handles rate limiting, pagination, and schema validation automatically.
+**Leagues with external APIs** — For leagues that provide external APIs, I built SDK wrappers with modern type hints, validation, and pagination. The [CFL SDK](https://github.com/ojadeyemi/cfl-sdk) is open source and handles proper error handling, retries, and schema validation automatically. Data is stored in Postgres, so if an API goes down, the app serves cached database data.
 
 </StaggerItem>
 
 <StaggerItem>
 
-**Leagues without APIs** — For leagues without official data sources, I built custom scrapers that fetch and normalize data on a schedule. These run reliably, handle failures gracefully, and keep the app updated even when source websites change their markup.
+**Leagues without APIs** — For leagues without official data sources, I built custom scrapers that follow best practices — respecting rate limits and not overloading servers. Data is stored in Postgres immediately after scraping, so I don't need to scrape often. Scrapers also pause during off-seasons when there's no new data to collect.
 
 </StaggerItem>
 
 <StaggerItem>
 
-**HoopQueens** — This league had no data infrastructure at all, so I built it from scratch. I created an AI-powered tool that takes raw box scores from the league, auto-extracts the data schema using an agent, previews it for validation, and saves it to the database. What used to be manual data entry is now done in seconds.
+**Leagues with no infrastructure** — Some leagues like HoopQueens had no data infrastructure at all. I created an AI-powered tool that takes raw box scores, auto-extracts the data schema using an agent, previews it for validation, and saves it to the database. What used to be manual data entry is now done in seconds.
 
 </StaggerItem>
 
@@ -272,7 +290,7 @@ Everything in the system is stateless. Services scale horizontally by default.
 
 <StaggerItem>
 
-**CI/CD** — Every commit is linted, formatted, and tested automatically. Pull requests are reviewed with Gemini Code Assist to catch issues before they merge. If any check fails, the deployment is blocked. If a deployment introduces a breaking change, it rolls back automatically. This means I can ship often without worrying about breaking production.
+**CI/CD** — Every commit is linted, formatted, and tested automatically. Pull requests are reviewed with [Gemini Code Assist](https://codeassist.google/) to catch issues before they merge. If any check fails, the deployment is blocked. If a deployment introduces a breaking change, it rolls back automatically. This means I can ship often without worrying about breaking production.
 
 </StaggerItem>
 
@@ -298,6 +316,41 @@ Everything in the system is stateless. Services scale horizontally by default.
 
 ---
 
+## Technical Deep Dive
+
+<details>
+  <summary>Why PWA instead of native apps?</summary>
+  <div className="p-4">
+    Building separate iOS, Android, and web apps means maintaining three codebases, fixing three sets of bugs, and managing three deployment pipelines. As a solo developer, that's not realistic.
+
+    PWAs deliver:
+    - **One codebase** for all platforms
+    - **Instant updates** — no app store approval delays
+    - **Offline support** through service workers
+    - **Push notifications** without platform SDKs
+    - **Installable** like native apps on phones, tablets, desktops, and even VR headsets
+
+    The trade-off? Slightly less access to platform-specific APIs. But for a sports stats app, PWA capabilities are more than enough.
+
+  </div>
+</details>
+
+<details>
+  <summary>How does Redis caching work?</summary>
+  <div className="p-4">
+    Every API request checks Redis first. If the data is cached, it's returned immediately (sub-10ms). If there's a cache miss, the database gets queried, the response is normalized, and it's stored in Redis with a TTL.
+
+    Cache invalidation happens in two ways:
+    1. **Time-based** — Short TTLs (5 minutes) for live game data, longer TTLs for off-season leagues
+    2. **Event-based** — Explicit cache clears when data is updated
+
+    The system tracks each league's active season and adjusts cache duration accordingly. This keeps p90 latency under 100ms even during peak traffic.
+
+  </div>
+</details>
+
+---
+
 <FadeIn delay={0.3}>
 
 > Northscore isn't built to _look_ scalable.
@@ -308,5 +361,7 @@ Everything in the system is stateless. Services scale horizontally by default.
 <SlideIn delay={0.4}>
 
 There's still a lot to improve. Better personalization. More leagues. Smarter notifications. But the foundation is solid. And that's what matters.
+
+**Try it out:** [northscore.ca](https://www.northscore.ca/)
 
 </SlideIn>

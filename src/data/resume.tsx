@@ -116,9 +116,34 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Scout AI",
+      href: "https://scout.northscore.ca/",
+      dates: "March 2026",
+      active: true,
+      description:
+        "AI-powered scouting platform for Canadian basketball. Query 25,000+ players in plain English using Cohere and Google Gemini.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Python",
+        "Langgraph",
+        "Google Cloud Run",
+        "Docker",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/ojadeyemi/canada-basketball-scoutai-platform",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/video/canada_basketball_scout_ai_demo_v1.mp4",
+    },
+    {
       title: "OUSAC",
       href: "https://www.ousac.ca/",
-      dates: "Jan 2025 - March 2025",
+      dates: "Jan 2026 - March 2026",
       active: true,
       description:
         "Built the official website for OUSAC, a consortium of sports analytics clubs from Ontario universities.",
@@ -159,8 +184,8 @@ export const DATA = {
     },
     {
       title: "cfl-sdk",
-      href: "https://github.com/ojadeyemi/cfl-sdk",
-      dates: "April 2025 - Present",
+      href: "https://pypi.org/project/cfl-sdk/",
+      dates: "Sept 2025 - Present",
       active: true,
       description: "Python SDK for interacting with official CFL data.",
       technologies: [
@@ -182,39 +207,15 @@ export const DATA = {
       image: "https://pypi.org/static/images/twitter.abaf4b19.webp",
       video: "",
     },
-    {
-      title: "cebl-sdk",
-      href: "https://github.com/ojadeyemi/cebl-sdk",
-      dates: "Jan 2025 - Present",
-      active: true,
-      description: "Python SDK for interacting with official CEBL data.",
-      technologies: [
-        "Python",
-        "Pandas",
-        "BeautifulSoup",
-        "Pytest",
-        "Pylint",
-        "Github Actions",
-        "HTTPX",
-      ],
-      links: [
-        {
-          type: "Source",
-          href: "https://github.com/ojadeyemi/cebl-sdk",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "https://pypi.org/static/images/twitter.abaf4b19.webp",
-      video: "",
-    },
+
     {
       title: "Portfolio Website",
       href: "https://ojadeyemi.github.io/",
-      dates: "Nov 2024 - Present",
+      dates: "Aug 2025 - Present",
       active: false,
       description: "You are looking at it 👀.",
       technologies: [
-        "React",
+        "Next.js",
         "TypeScript",
         "TailwindCSS",
         "Framer Motion",

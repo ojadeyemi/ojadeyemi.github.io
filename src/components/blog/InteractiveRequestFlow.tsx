@@ -92,7 +92,7 @@ export function InteractiveRequestFlow() {
       <div className="relative pb-16 sm:pb-12">
         {/* Progress line background - anchored to first step's center */}
         <div
-          className="absolute bg-zinc-200 dark:bg-zinc-700"
+          className="absolute bg-zinc-200 dark:bg-zinc-700 sm:hidden"
           style={{
             // Mobile: vertical line on left
             left: `${STEP_CIRCLE_SIZE / 2}px`,
@@ -114,7 +114,7 @@ export function InteractiveRequestFlow() {
 
         {/* Animated progress line - grows left to right */}
         <div
-          className="absolute bg-blue-500 transition-all duration-500 ease-in-out dark:bg-blue-400"
+          className="absolute bg-blue-500 transition-all duration-500 ease-in-out dark:bg-blue-400 sm:hidden"
           style={{
             // Mobile: vertical growth
             left: `${STEP_CIRCLE_SIZE / 2}px`,

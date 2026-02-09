@@ -11,7 +11,7 @@ export interface BlogPost {
 }
 
 // Manually maintain list of blog slugs for static export
-const BLOG_SLUGS: string[] = ["northscore-system-design", "sample-post"];
+const BLOG_SLUGS: string[] = ["northscore-system-design"];
 
 export function getAllSlugs(): string[] {
   return BLOG_SLUGS;
