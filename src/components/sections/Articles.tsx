@@ -47,7 +47,7 @@ const Articles = () => {
       <BlurFade delay={BLUR_FADE_DELAY * 22}>
         <div className="flex flex-col gap-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-md font-bold">Articles</h2>
+            <h2 className="text-md font-bold">Blogs</h2>
             <ViewTransitionLink
               href="/blog"
               className="text-xs text-muted-foreground hover:text-primary"
