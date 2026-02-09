@@ -65,7 +65,8 @@ export const ResumeCard: React.FC<ResumeCardProps> = ({
             alt={altText}
             className={cn(
               "object-contain",
-              title === "NorthScore" && "bg-black",
+              title === "Northscore" && "bg-black",
+              title === "Maple Leaf Sports & Entertainment" && "bg-gray-800",
             )}
           />
           <AvatarFallback>{altText[0]}</AvatarFallback>

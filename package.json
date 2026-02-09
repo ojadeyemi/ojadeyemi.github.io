@@ -7,10 +7,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "serve": "serve out -p 3000",
     "lint": "next lint",
     "format": "prettier --write src",
     "export": "next build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "knip": "knip",
+    "knip:production": "knip --production",
+    "knip:fix": "knip --fix"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -30,12 +34,14 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-markdown": "^9.1.0",
+    "rehype-pretty-code": "^0.14.1",
     "remark-gfm": "^4.0.1",
-    "sugar-high": "^0.9.5"
+    "shiki": "^3.20.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@next/eslint-plugin-next": "^15.5.9",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^24.10.4",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
@@ -46,9 +52,11 @@
     "eslint-plugin-react-refresh": "^0.4.26",
     "globals": "^15.15.0",
     "husky": "^9.1.7",
+    "knip": "^5.79.0",
     "postcss": "^8.5.6",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.6.14",
+    "serve": "^14.2.5",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^3.4.19",
     "tailwindcss-animate": "^1.0.7",

@@ -114,13 +114,14 @@ h4 {
   text-wrap: balance;
 }
 
+/* Code blocks */
 pre {
   background-color: #16161e;
   border-radius: 0.5rem;
   overflow-x: auto;
-  padding: 1rem;
+  padding: 1rem 0;
   margin: 1.5rem 0;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 pre::-webkit-scrollbar {
@@ -132,6 +133,7 @@ pre {
   scrollbar-width: none;
 }
 
+/* Inline code */
 code {
   font-family: "Menlo", "Monaco", "Courier New", monospace;
   font-size: 14px;
@@ -140,35 +142,47 @@ code {
   background-color: hsl(var(--muted));
 }
 
+/* Code inside pre blocks */
 pre code {
   background-color: transparent;
   padding: 0;
   border: none;
   font-size: 14px;
   line-height: 1.5;
+  display: block;
 }
 
-pre code > span .sh__token--identifier {
-  color: white !important;
+/* rehype-pretty-code line styling */
+pre [data-line] {
+  padding: 0 1rem;
 }
 
-code:not(pre code) span {
-  font-weight: 500;
-  color: hsl(var(--foreground)) !important;
+/* Line numbers */
+code[data-line-numbers] {
+  counter-reset: line;
 }
 
+code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1.5rem;
+  text-align: right;
+  color: #565f89;
+}
+
+/* Highlighted lines */
+pre [data-highlighted-line] {
+  background-color: rgba(122, 162, 247, 0.1);
+  border-left: 2px solid #7aa2f7;
+}
+
+/* Inline code in dark mode */
 @media (prefers-color-scheme: dark) {
   code {
     background-color: hsl(var(--muted));
   }
-
-  code:not(pre code) span {
-    color: hsl(var(--foreground)) !important;
-  }
-}
-
-pre code span {
-  font-weight: 500;
 }
 
 hr {
@@ -227,4 +241,20 @@ table {
   to {
     opacity: 1;
   }
+}
+
+/* Named element transitions for morphing */
+.blog-thumbnail {
+  view-transition-name: var(--vt-name);
+}
+
+.blog-title {
+  view-transition-name: var(--vt-title);
+}
+
+/* Smooth morph for thumbnails and titles */
+::view-transition-group(blog-thumbnail),
+::view-transition-group(blog-title) {
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
