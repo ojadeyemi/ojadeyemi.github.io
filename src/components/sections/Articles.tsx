@@ -32,7 +32,7 @@ const Articles = () => {
       <section id="articles">
         <BlurFade delay={BLUR_FADE_DELAY * 22}>
           <div className="flex flex-col gap-y-4">
-            <h2 className="text-md font-bold">Articles</h2>
+            <h2 className="text-md font-bold">Blogs</h2>
             <div className="flex flex-col gap-y-3">
               <div className="text-sm text-muted-foreground">Loading...</div>
             </div>

@@ -5,8 +5,8 @@ export const metadata = {
   description:
     "How I built a scalable sports data platform serving live stats across Canadian leagues from a single codebase.",
   publishDate: "2026-01-03",
-  tags: ["System Design", "PWA", "FastAPI", "Architecture"],
-  readTime: "6 min read",
+  tags: ["System Design", "Architecture"],
+  readTime: "8 min read",
   thumbnail: "/img/northscore-screenshots-grid.png",
 };
 
@@ -127,9 +127,9 @@ The system is built in three layers. Each one scales independently.
 
 <StaggerItem>
 
-**Backend** — Two stateless services: FastAPI handles stats requests, Node.js serves as a headless CMS and content API. No session state, no sticky routing. When traffic spikes, containers scale horizontally. When traffic drops, they scale back down. I don't manage servers.
+**Backend** — FastAPI and Node.js run as stateless containers handling stats and content requests. Supabase manages auth and user personalization data. When traffic spikes, stateless services scale horizontally. When traffic drops, they scale back down. I don't manage servers.
 
-</StaggerItem></invoke>
+</StaggerItem>
 
 <StaggerItem>
 
@@ -175,9 +175,7 @@ Instead, one Next.js app runs everywhere — phones, tablets, iPads, MacBooks, d
 
 <FadeIn delay={0.2}>
 
-<div className="pb-0">
-  <InteractiveRequestFlow />
-</div>
+<InteractiveRequestFlow />
 
 </FadeIn>
 
@@ -270,7 +268,7 @@ Northscore uses passwordless authentication. Users sign in with Google, Microsof
 
 <SlideIn delay={0.3}>
 
-A managed auth backend handles everything user-related: accounts, favorite teams, notification preferences, upcoming games tracking. The stats API doesn't know who you are. It just serves data. This separation keeps the architecture clean and makes the stats API fast — it's stateless and cacheable.
+Supabase handles everything user-related: accounts, favorite teams, notification preferences, upcoming games tracking. The stats API doesn't know who you are. It just serves data. This separation keeps the architecture clean and makes the stats API fast — it's stateless and cacheable.
 
 Onboarding is intentionally simple: install the app, sign up, enable notifications. Three steps. No friction.
 
@@ -329,6 +327,7 @@ Everything in the system is stateless. Services scale horizontally by default.
     - **Offline support** through service workers
     - **Push notifications** without platform SDKs
     - **Installable** like native apps on phones, tablets, desktops, and even VR headsets
+    - **SEO benefits** — pages are SSR and cached on CDN, so search engines (SEO), AI engines (AEO), and generative engines (GEO) can crawl and index content
 
     The trade-off? Slightly less access to platform-specific APIs. But for a sports stats app, PWA capabilities are more than enough.
 
@@ -360,7 +359,7 @@ Everything in the system is stateless. Services scale horizontally by default.
 
 <SlideIn delay={0.4}>
 
-There's still a lot to improve. Better personalization. More leagues. Smarter notifications. But the foundation is solid. And that's what matters.
+There's still a lot to improve. Better personalization. More leagues. Smarter notifications. An arcade section with leaderboards. But the foundation is solid. And that's what matters.
 
 **Try it out:** [northscore.ca](https://www.northscore.ca/)
 

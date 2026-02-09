@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const STEP_CIRCLE_SIZE = 40; // h-10 w-10 = 40px
-const ANIMATION_STEP_DELAY = 1000; // ms per step
+const ANIMATION_STEP_DELAY = 2500; // ms per step
 const INITIAL_DELAY = 300; // ms before animation starts
 const FINAL_DELAY = 800; // ms after animation ends
 
@@ -16,21 +16,21 @@ const steps = [
   },
   {
     id: 2,
-    label: "CDN serves shell",
+    label: "CDN delivers page",
     icon: "🌐",
-    description: "Edge CDN delivers the cached PWA shell instantly",
+    description: "Edge CDN serves ISR-cached page (may be stale)",
   },
   {
     id: 3,
     label: "API request sent",
     icon: "📡",
-    description: "Frontend requests data from the Stats API",
+    description: "If revalidation needed, Stats API is called",
   },
   {
     id: 4,
     label: "Redis cache hit",
     icon: "⚡",
-    description: "Data found in cache, no database query needed",
+    description: "Data retrieved from Redis cache (sub-10ms)",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const steps = [
     id: 6,
     label: "UI updates",
     icon: "✨",
-    description: "Fresh data renders in the interface",
+    description: "Fresh data renders, ISR/CDN cache updated",
   },
 ];
 
@@ -89,7 +89,7 @@ export function InteractiveRequestFlow() {
         </button>
       </div>
 
-      <div className="relative pb-16 sm:pb-12">
+      <div className="relative pb-4 sm:pb-3">
         {/* Progress line background - anchored to first step's center */}
         <div
           className="absolute bg-zinc-200 dark:bg-zinc-700 sm:hidden"
@@ -98,7 +98,7 @@ export function InteractiveRequestFlow() {
             left: `${STEP_CIRCLE_SIZE / 2}px`,
             top: `${STEP_CIRCLE_SIZE / 2}px`,
             width: "2px",
-            height: "calc(100% - 5rem)",
+            height: "calc(100% - 2rem)",
           }}
         />
         <div
@@ -120,7 +120,7 @@ export function InteractiveRequestFlow() {
             left: `${STEP_CIRCLE_SIZE / 2}px`,
             top: `${STEP_CIRCLE_SIZE / 2}px`,
             width: "2px",
-            height: `calc((100% - 5rem) * ${activeStep ? activeStep / steps.length : 0})`,
+            height: `calc((100% - 2rem) * ${activeStep ? activeStep / steps.length : 0})`,
           }}
         />
         <div
