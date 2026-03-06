@@ -74,10 +74,9 @@ const About = () => {
               Outside of work, I enjoy team sports 🏀 ⚽ 🏈 and music ˚♬ ﾟ.
               These hobbies keep me active, motivated, and creatively inspired.
               I’m passionate about developing my computer science skills, with a
-              focus on continuous innovation and advancing the sports technology
-              industry. I’m also passionate about making technology more
-              accessible, fostering curiosity, and empowering others to engage
-              with and shape its future.
+              focus on continuous innovation. I’m also passionate about making
+              technology more accessible, fostering curiosity, and empowering
+              others to engage with and shape its future.
             </p>
           </div>
         </BlurFade>

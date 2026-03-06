@@ -9,7 +9,7 @@ export const DATA = {
   location: "Toronto, CA",
   description: "Software Engineer. I love building things and helping people.",
   summary:
-    "Hello! I'm currently a computer science student located in Toronto. I'm currently working at MLSE as an Engineer, where I've been able to build  [Gen AI applications](https://aws.amazon.com/blogs/media/maple-leaf-sports-entertainment-debuts-generative-ai-video-editor-to-deliver-content-to-fans-faster/) for the Toronto Raptors, Maple Leafs, TFC, Argos and associated fans.",
+    "Hello! I'm currently a computer science student located in Toronto.",
   skills: [
     // Languages
     "Python",
@@ -74,6 +74,16 @@ export const DATA = {
   },
   work: [
     {
+      company: "Genesys",
+      badges: [],
+      href: "https://www.genesys.com/",
+      title: "Software Developer Intern, Analytics ",
+      logoUrl: "/img/genesys.jpeg",
+      start: "May 2026",
+      end: "Present",
+      description: "Powering decisions with big data",
+    },
+    {
       company: "Northscore",
       badges: [],
       href: "https://www.northscore.ca/",
@@ -119,7 +129,7 @@ export const DATA = {
       title: "Scout AI",
       href: "https://scout.northscore.ca/",
       dates: "March 2026",
-      active: true,
+      active: false,
       description:
         "AI-powered scouting platform for Canadian basketball. Query 25,000+ players in plain English using Cohere and Google Gemini.",
       technologies: [
