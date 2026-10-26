@@ -1,4 +1,4 @@
-const SERVICE_WORKER_VERSION = 1.06;
+const SERVICE_WORKER_VERSION = 1.07;
 const CACHE_NAME = `portfolio-cache-v${SERVICE_WORKER_VERSION}`;
 
 // Static files and routes to cache
