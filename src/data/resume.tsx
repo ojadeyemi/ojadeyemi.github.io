@@ -14,32 +14,32 @@ export const DATA = {
     // Languages
     "Python",
     "Java",
-    "C",
-    "JavaScript",
     "TypeScript",
-    "HTML5",
-    "CSS/TailwindCSS",
     "SQL",
-    "Bash/Unix Shell",
 
-    // Frameworks / Libraries
+    // Frameworks
     "FastAPI",
-    "React.js",
+    "React",
     "Next.js",
-    "LangGraph",
-    "Express.js",
-    "Spring Boot",
 
-    // Databases / Data
+    // Data
+    "Kafka",
+    "Spark",
+    "Airflow",
+    "Iceberg",
     "Redis",
 
-    // DevOps / Cloud / Tools
+    // Cloud / DevOps
     "Git",
-    "GitHub Actions",
     "Docker",
     "Kubernetes",
+    "Terraform",
     "AWS",
     "Google Cloud",
+
+    // Observability
+    "OpenTelemetry",
+    "New Relic",
   ],
 
   navbar: [
@@ -77,7 +77,7 @@ export const DATA = {
       company: "Genesys",
       badges: [],
       href: "https://www.genesys.com/",
-      title: "Software Developer Intern, Analytics ",
+      title: "Software Developer",
       logoUrl: "/img/genesys.jpeg",
       start: "May 2026",
       end: "Present",

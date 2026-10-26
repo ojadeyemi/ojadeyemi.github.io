@@ -11,9 +11,33 @@ const About = () => {
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
           <div className="flex flex-col gap-y-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
             <p>
-              Hello! I’m a computer science student based in Toronto and
-              previously worked as an Engineer at MLSE, where I helped
-              build&nbsp;
+              Hello! I’m a computer science student in Toronto. Right now I’m a
+              Software Developer at{" "}
+              <strong>
+                <a
+                  href="https://www.genesys.com/"
+                  className="inline underline transition duration-150 ease-in-out hover:text-purple-300 active:text-purple-600"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Visit Genesys website (opens in new tab)"
+                >
+                  Genesys
+                </a>
+              </strong>{" "}
+              working on big data, and building{" "}
+              <strong>
+                <a
+                  href="https://www.northscore.ca/"
+                  className="inline underline transition duration-150 ease-in-out hover:text-purple-300 active:text-purple-600"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Visit Northscore website (opens in new tab)"
+                >
+                  Northscore
+                </a>
+              </strong>{" "}
+              on the side. Before that, I was an Engineer at MLSE, where I
+              helped build&nbsp;
               <strong>
                 <a
                   href="https://aws.amazon.com/blogs/media/maple-leaf-sports-entertainment-debuts-generative-ai-video-editor-to-deliver-content-to-fans-faster/"
