@@ -77,10 +77,10 @@ export const DATA = {
       company: "Genesys",
       badges: [],
       href: "https://www.genesys.com/",
-      title: "Software Developer",
+      title: "Software Developer Intern",
       logoUrl: "/img/genesys.jpeg",
       start: "May 2026",
-      end: "Present",
+      end: "June 2027",
       description: "Powering decisions with big data",
     },
     {

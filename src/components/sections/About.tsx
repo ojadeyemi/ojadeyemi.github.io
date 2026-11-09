@@ -12,7 +12,7 @@ const About = () => {
           <div className="flex flex-col gap-y-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
             <p>
               Hello! I’m a computer science student in Toronto. Right now I’m a
-              Software Developer at{" "}
+              Software Developer Intern at{" "}
               <strong>
                 <a
                   href="https://www.genesys.com/"
